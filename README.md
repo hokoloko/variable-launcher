@@ -22,7 +22,7 @@ Data.saveBoolean(String key, boolean value);
 Data.remove(String key);
 Data.clear();
 ```
-##### Example: ....
+##### Examples: ....
 ---
 
 #### Module
@@ -56,7 +56,7 @@ Module.getSettingNames(String moduleName);
 Module.addSetting(String moduleName, Setting setting);
 Module.addSettings(String moduleName, Setting[] settings);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### ModuleManager
 ##### Static methods
@@ -66,7 +66,7 @@ ModuleManager.addModules(Modules[] modules);
 ModuleManager.removeModule(Module module);
 ModuleManager.getModuleNames();
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### Setting
 ##### Static methods
@@ -79,7 +79,7 @@ Setting.getCurrentValue(String moduleName, String settingName); // Для нас
 Setting.isActive(String moduleName, String settingName); // Для настроек типа "state"
 Setting.getText(String moduleName, String settingName); // Для настроек типа "text-field"
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### ButtonSetting
 ##### Constructor: `ButtonSetting(String name, function(View view));`
@@ -90,7 +90,7 @@ ButtonSetting.getType();
 ButtonSetting.isVisible();
 ButtonSetting.setVisibility(boolean visibility);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### ModeSetting
 ##### Constructor: `ModeSetting(String name, String[] modes);`
@@ -104,7 +104,7 @@ ModeSetting.setVisibility(boolean visibility);
 ModeSetting.getCurrentMode();
 ModeSetting.setOnModeSelectedListener(function(String mode));
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### SliderSetting
 ##### Constructor: `SliderSetting(String name, [double default, double min, double max, double step]);`
@@ -118,7 +118,7 @@ SliderSetting.setVisibility(boolean visibility);
 SliderSetting.getCurrentValue();
 SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### StateSetting
 ##### Constructor: `StateSetting(String name, boolean state);`
@@ -132,7 +132,7 @@ StateSetting.setVisibility(boolean visibility);
 StateSetting.isActive();
 StateSetting.setOnStateToggleListener(function(boolean state));
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### TextFieldSetting
 ##### Constructor: `TextFieldSetting(String name, String hint, String text);`
@@ -146,7 +146,7 @@ TextFieldSetting.setVisibility(boolean visibility);
 TextFieldSetting.getText();
 TextFieldSetting.setOnTextChangedListener(function(String text));
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### Level
 ##### Static methods
@@ -165,7 +165,7 @@ Level.setSubtitle(String text);
 Level.displayClientMessage(String text);
 Level.showTipMessage(String text);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### LocalPlayer
 ##### Static methods
@@ -246,7 +246,7 @@ LocalPlayer.isOnLadder();
 LocalPlayer.canFly();
 LocalPlayer.canShowNameTag();
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### Inventory (of LocalPlayer)
 ##### Static methods
@@ -260,7 +260,7 @@ Inventory.getArmor(int armorSlot);
 Inventory.setSelectedSlot(int slot);
 Inventory.setArmor(int slot, int armorSlot);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### Item (from Inventory)
 ##### Static methods
@@ -286,7 +286,7 @@ Item.isEnchanted(int slot);
 Item.setUseDuration(int slot, int duration);
 Item.setCount(int slot, int count);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### Player
 ##### Static methods
@@ -325,7 +325,7 @@ Player.isOnLadder(int playerID);
 Player.canFly(int playerID);
 Player.canShowNameTag(int playerID);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### Block
 ##### Static methods
@@ -339,7 +339,7 @@ Block.isInteractive(int x, int y, int z);
 Block.setFriction(int x, int y, int z);
 Block.setDestroyTime(int x, int y, int z, double time);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 #### Memory (ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
 ##### Static methods:
@@ -369,7 +369,7 @@ Memory.setInt(int address, int offset, int value);
 Memory.setFloat(int address, int offset, float value);
 Memory.setChar(int address, int offset, char value);
 ```
-##### Example: ...
+##### Examples: ...
 ---
 ### Constant classes
 #### ModuleCategory
