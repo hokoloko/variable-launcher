@@ -391,7 +391,7 @@ BlockSide.WEST
 BlockSide.EAST
 ```
 ---
-#### PacketType
+#### PacketType (ЭТО ТОЖЕ ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
 ```
 PacketType.ADD_BEHAVIOR_TREE_PACKET
 PacketType.ADD_ENTITY_PACKET
@@ -495,6 +495,6 @@ onChat(String text);
 onScreenChange(String screen);
 onServerConnect(String address, int port);
 onServerDisconnect();
-onSendPacket(String name, int address);
+onSendPacket(String name, int address); (ТОЖЕ ДЛЯ ОСОБО УМНЫХ)
 ```
 ##### Example: ...
