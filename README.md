@@ -1,6 +1,6 @@
 # Variable Launcher - API Documentation
 
-#### Functions
+#### Global functions
 ```
 getContext();
 print(String text);
@@ -9,7 +9,7 @@ getScreenName();
 ```
 ---
 #### Data
-##### Static methods:
+##### Static methods
 ```
 Data.getString(String key, String defaultValue);
 Data.getNumber(String key, double defaultValue);
@@ -27,7 +27,7 @@ Data.clear();
 
 #### Module
 ##### Constructor: `Module(String name, boolean toggleable, boolean bindable, String category)`
-##### Methods:
+##### Methods
 ```
 Module.getName();
 Module.isToggleable();
@@ -44,7 +44,7 @@ Module.addSettings(Setting[] settings);
 Module.setOnToggleListener(function(View view, boolean active));
 Module.setOnClickListener(function(View view));
 ```
-##### Static methods:
+##### Static methods
 ```
 Module.isToggleable(String moduleName);
 Module.isBindable(String moduleName);
@@ -59,7 +59,7 @@ Module.addSettings(String moduleName, Setting[] settings);
 ##### Example: ...
 ---
 #### ModuleManager
-##### Static methods:<br/>
+##### Static methods
 ```
 ModuleManager.addModule(Module module);
 ModuleManager.addModules(Modules[] modules);
@@ -69,7 +69,7 @@ ModuleManager.getModuleNames();
 ##### Example: ...
 ---
 #### Setting
-##### Static methods:
+##### Static methods
 ```
 Setting.getType(String moduleName, String settingName);
 Setting.isVisible(String moduleName, String settingName);
@@ -83,7 +83,7 @@ Setting.getText(String moduleName, String settingName); // Для настрое
 ---
 #### ButtonSetting
 ##### Constructor: `ButtonSetting(String name, function(View view));`
-##### Methods:
+##### Methods
 ```
 ButtonSetting.getName();
 ButtonSetting.getType();
@@ -94,7 +94,7 @@ ButtonSetting.setVisibility(boolean visibility);
 ---
 #### ModeSetting
 ##### Constructor: `ModeSetting(String name, String[] modes);`
-##### Methods:
+##### Methods
 ```
 ModeSetting.getName();
 ModeSetting.getType();
@@ -108,7 +108,7 @@ ModeSetting.setOnModeSelectedListener(function(String mode));
 ---
 #### SliderSetting
 ##### Constructor: `SliderSetting(String name, [double default, double min, double max, double step]);`
-##### Methods:
+##### Methods
 ```
 SliderSetting.getName();
 SliderSetting.getType();
@@ -122,7 +122,7 @@ SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));
 ---
 #### StateSetting
 ##### Constructor: `StateSetting(String name, boolean state);`
-##### Methods:
+##### Methods
 ```
 StateSetting.getName();
 StateSetting.getType();
@@ -136,7 +136,7 @@ StateSetting.setOnStateToggleListener(function(boolean state));
 ---
 #### TextFieldSetting
 ##### Constructor: `TextFieldSetting(String name, String hint, String text);`
-##### Methods:
+##### Methods
 ```
 TextFieldSetting.getName();
 TextFieldSetting.getType();
@@ -149,7 +149,7 @@ TextFieldSetting.setOnTextChangedListener(function(String text));
 ##### Example: ...
 ---
 #### Level
-##### Static methods:
+##### Static methods
 ```
 Level.getAddress();
 Level.getPort();
@@ -168,7 +168,7 @@ Level.showTipMessage(String text);
 ##### Example: ...
 ---
 #### LocalPlayer
-##### Static methods:
+##### Static methods
 ```
 LocalPlayer.getUniqueID();
 LocalPlayer.getPointedPlayer();
@@ -249,7 +249,7 @@ LocalPlayer.canShowNameTag();
 ##### Example: ...
 ---
 #### Inventory (of LocalPlayer)
-##### Static methods:
+##### Static methods
 ```
 Inventory.swapSlots(int fromSlot, int toSlot);
 Inventory.dropSlot(int slot, boolean dropAll, boolean deleteDrop);
@@ -263,7 +263,7 @@ Inventory.setArmor(int slot, int armorSlot);
 ##### Example: ...
 ---
 #### Item (from Inventory)
-##### Static methods:
+##### Static methods
 ```
 Item.getID(int slot);
 Item.getData(int slot);
@@ -289,7 +289,7 @@ Item.setCount(int slot, int count);
 ##### Example: ...
 ---
 #### Player
-##### Static methods:
+##### Static methods
 ```
 Player.isLocalPlayer(int playerID);
 Player.getNameTag(int playerID);
@@ -328,7 +328,7 @@ Player.canShowNameTag(int playerID);
 ##### Example: ...
 ---
 #### Block
-##### Static methods:
+##### Static methods
 ```
 Block.getID(int x, int y, int z);
 Block.getBrightness(int x, int y, int z);
