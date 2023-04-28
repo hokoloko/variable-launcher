@@ -213,7 +213,7 @@ LocalPlayer.getDistanceTo(int playerID);
 LocalPlayer.getDistanceToCoords(double x, double y, double z);
 LocalPlayer.getNearestPlayer(double radius);
 LocalPlayer.lookAt(int playerID);
-LocalPlayer.smoothLookAt(int playerID, double smooth);
+LocalPlayer.smoothLookAt(int playerID, double smoothness);
 
 LocalPlayer.getNameTag();
 LocalPlayer.getHealth();
