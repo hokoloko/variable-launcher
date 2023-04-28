@@ -482,3 +482,19 @@ PacketType.UPDATE_EQUIP_PACKET
 PacketType.UPDATE_TRADE_PACKET
 PacketType.USE_ITEM_PACKET
 ```
+---
+#### Hooks
+```
+onFastTick();
+onLevelTick();
+onAttack(int playerID);
+onPlayerAdded(int playerID);
+onUseItem(int x, int y, int z, int side);
+onTeleport(int playerID, int x, int y, int z);
+onChat(String text);
+onScreenChange(String screen);
+onServerConnect(String address, int port);
+onServerDisconnect();
+onSendPacket(String name, int address);
+```
+##### Example: ...
