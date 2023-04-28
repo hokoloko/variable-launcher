@@ -1,6 +1,6 @@
 # Variable Launcher - API Documentation
 
-#### Global functions
+#### Глобальные функции
 ```
 getContext();
 print(String text);
@@ -9,7 +9,7 @@ getScreenName();
 ```
 ---
 #### Data
-##### Static methods
+##### Статические методы
 ```
 Data.getString(String key, String defaultValue);
 Data.getNumber(String key, double defaultValue);
@@ -22,12 +22,12 @@ Data.saveBoolean(String key, boolean value);
 Data.remove(String key);
 Data.clear();
 ```
-##### Examples: ....
+##### Примеры: нема
 ---
 
 #### Module
-##### Constructor: `Module(String name, boolean toggleable, boolean bindable, String category)`
-##### Methods
+##### Конструктор: `Module(String name, boolean toggleable, boolean bindable, String category)`
+##### Методы
 ```
 Module.getName();
 Module.isToggleable();
@@ -44,7 +44,7 @@ Module.addSettings(Setting[] settings);
 Module.setOnToggleListener(function(View view, boolean active));
 Module.setOnClickListener(function(View view));
 ```
-##### Static methods
+##### Статические методы
 ```
 Module.isToggleable(String moduleName);
 Module.isBindable(String moduleName);
@@ -56,20 +56,20 @@ Module.getSettingNames(String moduleName);
 Module.addSetting(String moduleName, Setting setting);
 Module.addSettings(String moduleName, Setting[] settings);
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### ModuleManager
-##### Static methods
+##### Статические методы
 ```
 ModuleManager.addModule(Module module);
 ModuleManager.addModules(Modules[] modules);
 ModuleManager.removeModule(Module module);
 ModuleManager.getModuleNames();
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### Setting
-##### Static methods
+##### Статические методы
 ```
 Setting.getType(String moduleName, String settingName);
 Setting.isVisible(String moduleName, String settingName);
@@ -79,22 +79,22 @@ Setting.getCurrentValue(String moduleName, String settingName); // Для нас
 Setting.isActive(String moduleName, String settingName); // Для настроек типа "state"
 Setting.getText(String moduleName, String settingName); // Для настроек типа "text-field"
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### ButtonSetting
-##### Constructor: `ButtonSetting(String name, function(View view));`
-##### Methods
+##### Конструктор: `ButtonSetting(String name, function(View view));`
+##### Методы
 ```
 ButtonSetting.getName();
 ButtonSetting.getType();
 ButtonSetting.isVisible();
 ButtonSetting.setVisibility(boolean visibility);
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### ModeSetting
-##### Constructor: `ModeSetting(String name, String[] modes);`
-##### Methods
+##### Конструктор: `ModeSetting(String name, String[] modes);`
+##### Методы
 ```
 ModeSetting.getName();
 ModeSetting.getType();
@@ -104,11 +104,11 @@ ModeSetting.setVisibility(boolean visibility);
 ModeSetting.getCurrentMode();
 ModeSetting.setOnModeSelectedListener(function(String mode));
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### SliderSetting
-##### Constructor: `SliderSetting(String name, [double default, double min, double max, double step]);`
-##### Methods
+##### Конструктор: `SliderSetting(String name, [double default, double min, double max, double step]);`
+##### Методы
 ```
 SliderSetting.getName();
 SliderSetting.getType();
@@ -118,11 +118,11 @@ SliderSetting.setVisibility(boolean visibility);
 SliderSetting.getCurrentValue();
 SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));
 ```
-##### Examples: ...
+##### Нема: примеры
 ---
 #### StateSetting
-##### Constructor: `StateSetting(String name, boolean state);`
-##### Methods
+##### Конструктор: `StateSetting(String name, boolean state);`
+##### Методы
 ```
 StateSetting.getName();
 StateSetting.getType();
@@ -132,11 +132,11 @@ StateSetting.setVisibility(boolean visibility);
 StateSetting.isActive();
 StateSetting.setOnStateToggleListener(function(boolean state));
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### TextFieldSetting
-##### Constructor: `TextFieldSetting(String name, String hint, String text);`
-##### Methods
+##### Конструктор: `TextFieldSetting(String name, String hint, String text);`
+##### Методы
 ```
 TextFieldSetting.getName();
 TextFieldSetting.getType();
@@ -146,10 +146,10 @@ TextFieldSetting.setVisibility(boolean visibility);
 TextFieldSetting.getText();
 TextFieldSetting.setOnTextChangedListener(function(String text));
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### Level
-##### Static methods
+##### Статические методы
 ```
 Level.getAddress();
 Level.getPort();
@@ -165,10 +165,10 @@ Level.setSubtitle(String text);
 Level.displayClientMessage(String text);
 Level.showTipMessage(String text);
 ```
-##### Examples: ...
+##### Примеры: 1 + 2
 ---
 #### LocalPlayer
-##### Static methods
+##### Статические методы
 ```
 LocalPlayer.getUniqueID();
 LocalPlayer.getPointedPlayer();
@@ -246,10 +246,10 @@ LocalPlayer.isOnLadder();
 LocalPlayer.canFly();
 LocalPlayer.canShowNameTag();
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
-#### Inventory (of LocalPlayer)
-##### Static methods
+#### Inventory (типо твой инвентарь)
+##### Статические методы
 ```
 Inventory.swapSlots(int fromSlot, int toSlot);
 Inventory.dropSlot(int slot, boolean dropAll, boolean deleteDrop);
@@ -260,10 +260,10 @@ Inventory.getArmor(int armorSlot);
 Inventory.setSelectedSlot(int slot);
 Inventory.setArmor(int slot, int armorSlot);
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
-#### Item (from Inventory)
-##### Static methods
+#### Item (прдеметы из твоего инвентаря)
+##### Статические методы
 ```
 Item.getID(int slot);
 Item.getData(int slot);
@@ -286,10 +286,10 @@ Item.isEnchanted(int slot);
 Item.setUseDuration(int slot, int duration);
 Item.setCount(int slot, int count);
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### Player
-##### Static methods
+##### Статические методы
 ```
 Player.isLocalPlayer(int playerID);
 Player.getNameTag(int playerID);
@@ -325,10 +325,10 @@ Player.isOnLadder(int playerID);
 Player.canFly(int playerID);
 Player.canShowNameTag(int playerID);
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### Block
-##### Static methods
+##### Статические методы
 ```
 Block.getID(int x, int y, int z);
 Block.getBrightness(int x, int y, int z);
@@ -339,10 +339,10 @@ Block.isInteractive(int x, int y, int z);
 Block.setFriction(int x, int y, int z);
 Block.setDestroyTime(int x, int y, int z, double time);
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
 #### Memory (ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
-##### Static methods:
+##### Статические методы
 ```
 Memory.patch(int address, int[] patch);
 Memory.getLibrary();
@@ -369,9 +369,9 @@ Memory.setInt(int address, int offset, int value);
 Memory.setFloat(int address, int offset, float value);
 Memory.setChar(int address, int offset, char value);
 ```
-##### Examples: ...
+##### Примеры: нема
 ---
-### Constant classes
+### Константные классы
 #### ModuleCategory
 ```
 ModuleCategory.COMBAT
@@ -497,4 +497,4 @@ onServerConnect(String address, int port);
 onServerDisconnect();
 onSendPacket(String name, int address); (ТОЖЕ ДЛЯ ОСОБО УМНЫХ)
 ```
-##### Example: ...
+##### Примеры: не
