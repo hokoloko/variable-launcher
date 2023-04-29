@@ -27,159 +27,160 @@
 - [Hooks](#hooks)
 
 ## Глобальные функции
-```
-getContext();
-print(String text);
-preventDefault();
-getScreenName();
-```
+- `getContext();` - возвращает контекст приложения.
+- `print(String text);` - выводит контекстное сообщение.
+- `preventDefault();` - в зависимости от места вызова, отменяет вызов [хука](#hooks).
+- `getScreenName();` - возвращает название игрового экрана.
 
 ## Data
 ###### Класс для сохранения любых данных скрипта в корневой папке приложения
 ##### Статические методы
-```
-Data.getString(String key, String defaultValue);
-Data.getNumber(String key, double defaultValue);
-Data.getBoolean(String key, boolean defaultValue);
 
-Data.saveString(String key, String value);
-Data.saveNumber(String key, double value);
-Data.saveBoolean(String key, boolean value);
+- `Data.getString(String key, String defaultValue);` - ищет строку с ключом `key` и возвращает `defaultValue` если не находит его.
+- `Data.getNumber(String key, double defaultValue);` - ищет число с ключом `key` и возвращает `defaultValue` если не находит его.
+- `Data.getBoolean(String key, boolean defaultValue);` - ищет логическое значение (true/false) с ключом `key` и возвращает `defaultValue` если не находит его
 
-Data.remove(String key);
-Data.clear();
-```
+- `Data.saveString(String key, String value);` - сохраняет строку с ключом `key` и значением `defaultValue`.
+- `Data.saveNumber(String key, double value);` - сохраняет число с ключом `key` и значением `defaultValue`.
+- `Data.saveBoolean(String key, boolean value);` - сохраняет логическое значение (true/false) с ключом `key` и значением `defaultValue`.
+
+- `Data.remove(String key);` - удаляет значение с ключом `key`
+- `Data.clear();` - удаляет все значения скрипта.
+
 ##### Примеры: нема
 
 ## Module
 ###### Класс для создания кастомных модулей (функции)
 ##### Конструктор: `Module(String name, boolean toggleable, boolean bindable, String category)`
 ##### Методы
-```
-Module.getName();
-Module.isToggleable();
-Module.isBindable();
-Module.getCategory();
-Module.isActive();
-Module.isBindActive();
-Module.hasSettings();
-Module.getSetting(String name);
-Module.getSettings();
-Module.addSetting(Setting setting);
-Module.addSettings(Setting[] settings);
 
-Module.setOnToggleListener(function(View view, boolean active));
-Module.setOnClickListener(function(View view));
-```
+- `Module.getName();` - возвращает имя кастомного модуля.
+- `Module.isToggleable();` - возвращает `true` если модуль можно переключать, и `false` если нет.
+- `Module.isBindable();` - возвращает `true` если модуль можно биндить, и `false` если нет.
+- `Module.getCategory();` - возвращает строку с названием категории в которой находится модуль.
+- `Module.isActive();` - возвращает текущее состояние модуля (true/false). (*всегда возвращает `false` если модуль нельзя переключать*)
+- `Module.isBindActive();` - возвращает `true` или `false` в зависимости от того, стоит ли бинд на модуле. (*всегда возвращает `false` если модуль нельзя биндить*)
+- `Module.hasSettings();` - возвращает `true` если модуль имеет настройки, и `false` если нет.
+- `Module.getSetting(String name);` - ищет среди настроек модуля настройку с названием `name` и возвращает объект `Setting`. Бросает `RuntimeException` если не находит настройку.
+- `Module.getSettings();` - возвращает массив объектов `Setting`.
+- `Module.addSetting(Setting setting);` - добавляет настройку к модулю.
+- `Module.addSettings(Setting[] settings);` - тоже самое что и `Module.addSetting(Setting setting);`, просто позволяет одной строкой добавить сразу несколько настроек.
+
+- `Module.setOnToggleListener(function(View view, boolean active));` - добавляет действие `function(View view, boolean active)` вызываемое при переключении модуля.
+- `Module.setOnClickListener(function(View view));` - добавляет действие `function(View view)` вызываемое при клике по кнопке модуля.
+
 ##### Статические методы
-```
-Module.isToggleable(String moduleName);
-Module.isBindable(String moduleName);
-Module.getCategory(String moduleName);
-Module.isActive(String moduleName);
-Module.isBindActive(String moduleName);
-Module.hasSettings(String moduleName);
-Module.getSettingNames(String moduleName);
-Module.addSetting(String moduleName, Setting setting);
-Module.addSettings(String moduleName, Setting[] settings);
-```
+###### Эти методы предназначены для работы с дефолтными модулями, они делают тоже самое, что и методы выше, просто первым аргументом требуют имя метода. Бросает `RuntimeException` если модуль не найден. Пока что только так.
+
+- `Module.isToggleable(String moduleName);`
+- `Module.isBindable(String moduleName);`
+- `Module.getCategory(String moduleName);`
+- `Module.isActive(String moduleName);`
+- `Module.isBindActive(String moduleName);`
+- `Module.hasSettings(String moduleName);`
+- `Module.getSettingNames(String moduleName);`
+- `Module.addSetting(String moduleName, Setting setting);`
+- `Module.addSettings(String moduleName, Setting[] settings);`
+
 ##### Примеры: нема
 
 ## ModuleManager
 ###### Класс для добавления/удаления кастомных модулей
 ##### Статические методы
-```
-ModuleManager.addModule(Module module);
-ModuleManager.addModules(Modules[] modules);
-ModuleManager.removeModule(Module module);
-ModuleManager.getModuleNames();
-```
+
+- `ModuleManager.addModule(Module module);` - добавляет модуль в одну из пяти [категорий](#modulecategory) меню.
+- `ModuleManager.addModules(Modules[] modules);` - тоже самое, просто позволяет добавить сразу несколько модулей одной строкой.
+- `ModuleManager.removeModule(Module module);` - удаляет модуль.
+- `ModuleManager.getModuleNames();` - возвращает массив с именами всех модулей (имена кастомных модулей тоже).
+
 ##### Примеры: нема
 
 ## Setting
-###### Класс для получения какой-либо информации о настройках дефолтных модулей
+###### Класс для получения какой-либо информации о настройках дефолтных модулей (ситуация та же что и с Module)
 ##### Статические методы
-```
-Setting.getType(String moduleName, String settingName);
-Setting.isVisible(String moduleName, String settingName);
-Setting.setVisibility(String moduleName, String settingName, boolean visibility);
-Setting.getCurrentMode(String moduleName, String settingName); // Для настроек типа "mode"
-Setting.getCurrentValue(String moduleName, String settingName); // Для настроек типа "slider"
-Setting.isActive(String moduleName, String settingName); // Для настроек типа "state"
-Setting.getText(String moduleName, String settingName); // Для настроек типа "text-field"
-```
+
+- `Setting.getType(String moduleName, String settingName);` - ищет настройку `settingName` у модуля `moduleName` и возвращает его тип.
+- `Setting.isVisible(String moduleName, String settingName);` - ищет настройку `settingName` у модуля `moduleName` и возвращает логическое значение (`true` если настройка видима и `false` если нет).
+- `Setting.setVisibility(String moduleName, String settingName, boolean visibility);` - ищет настройку `settingName` у модуля `moduleName` и устанавливает ей видимость `visibility` (true/false).
+- `Setting.getCurrentMode(String moduleName, String settingName);` - ищет настройку `settingName` у модуля `moduleName` и возвращает текущий выбранный режим. **Бросит `RuntimeException` если тип настройки окажется не `mode`**.
+- `Setting.getCurrentValue(String moduleName, String settingName);` - ищет настройку `settingName` у модуля `moduleName` и возвращает текущее значение ползунка. **Бросит `RuntimeException` если тип настройки окажется не `slider`**.
+- `Setting.isActive(String moduleName, String settingName);` - ищет настройку `settingName` у модуля `moduleName` и возвращает текущее состояние. **Бросит `RuntimeException` если тип настройки окажется не `state`**.
+- `Setting.getText(String moduleName, String settingName);` - ищет настройку `settingName` у модуля `moduleName` и возвращает текущий текст. **Бросит `RuntimeException` если тип настройки окажется не `text-field`**.
+
+***Обратите внимание, что каждый из этих методов может бросить `RuntimeException` если вы ошибетесь в названии модуля или настройки.***
+
 ##### Примеры: нема
 
 ## ButtonSetting
 ###### Класс для создания настройки кнопки. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `ButtonSetting(String name, function(View view));`
 ##### Методы
-```
-ButtonSetting.getName();
-ButtonSetting.getType();
-ButtonSetting.isVisible();
-ButtonSetting.setVisibility(boolean visibility);
-```
+
+- `ButtonSetting.getName();` - возвращает имя настройки.
+- `ButtonSetting.getType();` - возвращает `"button"`.
+- `ButtonSetting.isVisible();` - возвращает `true` если настройка видима и `false` если нет.
+- `ButtonSetting.setVisibility(boolean visibility);` - устанавливает настройке видимость `visibility` (true/false).
+
 ##### Примеры: нема
 
 ## ModeSetting
 ###### Класс для создания настройки режима. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `ModeSetting(String name, String[] modes);`
 ##### Методы
-```
-ModeSetting.getName();
-ModeSetting.getType();
-ModeSetting.isVisible();
-ModeSetting.setVisibility(boolean visibility);
 
-ModeSetting.getCurrentMode();
-ModeSetting.setOnModeSelectedListener(function(String mode));
-```
+- `ModeSetting.getName();` - возвращает имя настройки.
+- `ModeSetting.getType();` - возвращает `"mode"`.
+- `ModeSetting.isVisible();` - возвращает `true` если настройка видима и `false` если нет.
+- `ModeSetting.setVisibility(boolean visibility);` - устанавливает настройке видимость `visibility` (true/false).
+
+- `ModeSetting.getCurrentMode();` - возвращает текущий выбранный режим.
+- `ModeSetting.setOnModeSelectedListener(function(String mode));` - устанавливает действие `function(String mode)` выполняемое после выбора режима.
+
 ##### Примеры: нема
 
 ## SliderSetting
 ###### Класс для создания настройки ползунка. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `SliderSetting(String name, [double default, double min, double max, double step]);`
 ##### Методы
-```
-SliderSetting.getName();
-SliderSetting.getType();
-SliderSetting.isVisible();
-SliderSetting.setVisibility(boolean visibility);
 
-SliderSetting.getCurrentValue();
-SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));
-```
+- `SliderSetting.getName();` - возвращает имя настройки.
+- `SliderSetting.getType();` - возвращает `"slider"`.
+- `SliderSetting.isVisible();` - возвращает `true` если настройка видима и `false` если нет.
+- `SliderSetting.setVisibility(boolean visibility);` - устанавливает настройке видимость `visibility` (true/false).
+
+- `SliderSetting.getCurrentValue();` - возвращает текущее значение.
+- `SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));` - устанавливает действие `function(double currentValue)` выполняемое после любого изменения значения.
+
 ##### Нема: примеры
 
 ## StateSetting
 ###### Класс для создания настройки состояния. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `StateSetting(String name, boolean state);`
 ##### Методы
-```
-StateSetting.getName();
-StateSetting.getType();
-StateSetting.isVisible();
-StateSetting.setVisibility(boolean visibility);
 
-StateSetting.isActive();
-StateSetting.setOnStateToggleListener(function(boolean state));
-```
+- `StateSetting.getName();` - возвращает имя настройки.
+- `StateSetting.getType();` - возвращает `"state"`.
+- `StateSetting.isVisible();` - возвращает `true` если настройка видима и `false` если нет.
+- `StateSetting.setVisibility(boolean visibility);` - устанавливает настройке видимость `visibility` (true/false).
+
+- `StateSetting.isActive();` - возвращает `true` если настройка активна и `false` если нет.
+- `StateSetting.setOnStateToggleListener(function(boolean state));` - устанавливает действие `function(boolean state)` выполняемое при переключении настройки.
+
 ##### Примеры: нема
 
 ## TextFieldSetting
 ###### Класс для создания настройки текстового поля. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `TextFieldSetting(String name, String hint, String text);`
 ##### Методы
-```
-TextFieldSetting.getName();
-TextFieldSetting.getType();
-TextFieldSetting.isVisible();
-TextFieldSetting.setVisibility(boolean visibility);
 
-TextFieldSetting.getText();
-TextFieldSetting.setOnTextChangedListener(function(String text));
-```
+- `TextFieldSetting.getName();` - возвращает имя настройки.
+- `TextFieldSetting.getType();` - возвращает `"text-field"`.
+- `TextFieldSetting.isVisible();` - возвращает `true` если настройка видима и `false` если нет.
+- `TextFieldSetting.setVisibility(boolean visibility);` - устанавливает настройке видимость `visibility` (true/false).
+
+- `TextFieldSetting.getText();` - возвращает текущий текст.
+- `TextFieldSetting.setOnTextChangedListener(function(String text));` - устанавливает действие `function(String text)` выполняемое при изменении текста.
+
 ##### Примеры: нема
 
 ## Level
