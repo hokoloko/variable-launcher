@@ -531,17 +531,17 @@ PacketType.USE_ITEM_PACKET
 
 ## Hooks
 ###### Все игровые хуки на данный момент
-```
-onFastTick();
-onLevelTick();
-onAttack(int playerID);
-onPlayerAdded(int playerID);
-onUseItem(int x, int y, int z, int side);
-onTeleport(int playerID, int x, int y, int z);
-onChat(String text);
-onScreenChange(String screen);
-onServerConnect(String address, int port);
-onServerDisconnect();
-onSendPacket(String name, int address); (ТОЖЕ ДЛЯ ОСОБО УМНЫХ)
-```
+
+- `onFastTick();` - вызывается 1000 раз за секунду. Не игровой хук.
+- `onLevelTick();` - вызывается 20 раз за секунду. Игровой хук.
+- `onAttack(int playerID);` - вызывается когда ты бьешь игрока. `playerID` - айди игрока которого ты ударил.
+- `onPlayerAdded(int playerID);` - вызывается когда на сервер заходит игрока. `playerID` - айди игрока который зашел.
+- `onUseItem(int x, int y, int z, int side, int itemId, int blockId);` - вызывается когда ты нажимаешь по блоку. `x`, `y`, `z` - координаты блока, `side` - сторона блока по которой ты нажал, `itemId` - айди предмета которым ты нажал, `blockId` - айди блока по которому ты нажал.
+- `onTeleport(int playerID, int x, int y, int z);` - вызывается когда игрок телепортируется. `playerID` - айди игрока который телепортировался, `x`, `y`, `z` - координаты куда он телепортировался.
+- `onChat(String text);` - вызывается когда ты пишешь сообщение в чат. `text` - текст твоего сообщения.
+- `onScreenChange(String screen);` - вызывается когда ты переходишь между игровыми экранами. `screen` - экран на который ты перешел.
+- `onServerConnect(String address, int port);` - вызывается когда ты заходишь на сервер. `address` - адрес сервера, `port` - порт сервера.
+- `onServerDisconnect();` - вызывается когда ты выходишь с сервера.
+- `onSendPacket(String name, int address);` - вызывается при отправке пакета. `name` - название пакета, `address` - адрес пакета в памяти. (ТОЖЕ ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
+
 ##### Примеры: скоро.
