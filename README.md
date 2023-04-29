@@ -225,6 +225,7 @@ LocalPlayer.getPositionZ();
 LocalPlayer.getMotionX();
 LocalPlayer.getMotionY();
 LocalPlayer.getMotionZ();
+LocalPlayer.getCollisionSize();
 LocalPlayer.getStatusFlag(int flag);
 LocalPlayer.getFallDistance();
 LocalPlayer.isInCreativeMode();
@@ -239,10 +240,10 @@ LocalPlayer.isFalling();
 LocalPlayer.isImmobile();
 LocalPlayer.isSitting();
 LocalPlayer.isSneaking();
-LocalPlayer.isMoving();
 LocalPlayer.isAlive();
 LocalPlayer.isOnLadder();
 LocalPlayer.canFly();
+LocalPlayer.canShowNameTag();
 ```
 ##### Примеры: нема
 ---
