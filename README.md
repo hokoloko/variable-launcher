@@ -10,7 +10,7 @@ preventDefault();
 getScreenName();
 ```
 ---
-#### Data
+#### Data - класс для сохранения любых данных скрипта в корневой папке приложения
 ##### Статические методы
 ```
 Data.getString(String key, String defaultValue);
@@ -27,7 +27,7 @@ Data.clear();
 ##### Примеры: нема
 ---
 
-#### Module
+#### Module - класс для создания кастомных модулей (функции)
 ##### Конструктор: `Module(String name, boolean toggleable, boolean bindable, String category)`
 ##### Методы
 ```
@@ -60,7 +60,7 @@ Module.addSettings(String moduleName, Setting[] settings);
 ```
 ##### Примеры: нема
 ---
-#### ModuleManager
+#### ModuleManager - класс для добавления/удаления кастомных модулей
 ##### Статические методы
 ```
 ModuleManager.addModule(Module module);
@@ -70,7 +70,7 @@ ModuleManager.getModuleNames();
 ```
 ##### Примеры: нема
 ---
-#### Setting
+#### Setting - класс для получения какой-либо информации о настройках дефолтных модулей
 ##### Статические методы
 ```
 Setting.getType(String moduleName, String settingName);
@@ -83,7 +83,7 @@ Setting.getText(String moduleName, String settingName); // Для настрое
 ```
 ##### Примеры: нема
 ---
-#### ButtonSetting
+#### ButtonSetting - класс для создания настройки кнопки
 ##### Конструктор: `ButtonSetting(String name, function(View view));`
 ##### Методы
 ```
@@ -94,7 +94,7 @@ ButtonSetting.setVisibility(boolean visibility);
 ```
 ##### Примеры: нема
 ---
-#### ModeSetting
+#### ModeSetting - класс для создания настройки режима
 ##### Конструктор: `ModeSetting(String name, String[] modes);`
 ##### Методы
 ```
@@ -108,7 +108,7 @@ ModeSetting.setOnModeSelectedListener(function(String mode));
 ```
 ##### Примеры: нема
 ---
-#### SliderSetting
+#### SliderSetting - класс для создания настройки ползунка
 ##### Конструктор: `SliderSetting(String name, [double default, double min, double max, double step]);`
 ##### Методы
 ```
@@ -122,7 +122,7 @@ SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));
 ```
 ##### Нема: примеры
 ---
-#### StateSetting
+#### StateSetting - класс для создания настройки состояния
 ##### Конструктор: `StateSetting(String name, boolean state);`
 ##### Методы
 ```
@@ -136,7 +136,7 @@ StateSetting.setOnStateToggleListener(function(boolean state));
 ```
 ##### Примеры: нема
 ---
-#### TextFieldSetting
+#### TextFieldSetting - класс для создания настройки текстового поля
 ##### Конструктор: `TextFieldSetting(String name, String hint, String text);`
 ##### Методы
 ```
@@ -150,7 +150,7 @@ TextFieldSetting.setOnTextChangedListener(function(String text));
 ```
 ##### Примеры: нема
 ---
-#### Level
+#### Level - класс для работы с уровнем/сервером
 ##### Статические методы
 ```
 Level.getAddress();
@@ -169,7 +169,7 @@ Level.showTipMessage(String text);
 ```
 ##### Примеры: 1 + 2
 ---
-#### LocalPlayer
+#### LocalPlayer - класс для работы с твоим игроком
 ##### Статические методы
 ```
 LocalPlayer.getUniqueID();
@@ -249,7 +249,7 @@ LocalPlayer.canShowNameTag();
 ```
 ##### Примеры: нема
 ---
-#### Inventory (типо твой инвентарь)
+#### Inventory класс для работы с твоим инвентарем
 ##### Статические методы
 ```
 Inventory.swapSlots(int fromSlot, int toSlot);
@@ -263,7 +263,7 @@ Inventory.setArmor(int slot, int armorSlot);
 ```
 ##### Примеры: нема
 ---
-#### Item (прдеметы из твоего инвентаря)
+#### Item - класс для работы с предметами из твоего инвентаря
 ##### Статические методы
 ```
 Item.getID(int slot);
@@ -289,7 +289,7 @@ Item.setCount(int slot, int count);
 ```
 ##### Примеры: нема
 ---
-#### Player
+#### Player - класс для работы с игроками на сервере
 ##### Статические методы
 ```
 Player.isLocalPlayer(int playerID);
@@ -328,7 +328,7 @@ Player.canShowNameTag(int playerID);
 ```
 ##### Примеры: нема
 ---
-#### Block
+#### Block - класс для работы с блоками
 ##### Статические методы
 ```
 Block.getID(int x, int y, int z);
@@ -342,7 +342,7 @@ Block.setDestroyTime(int x, int y, int z, double time);
 ```
 ##### Примеры: нема
 ---
-#### Memory (ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
+#### Memory - класс для работы с памятью (ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
 ##### Статические методы
 ```
 Memory.patch(int address, int[] patch);
@@ -373,7 +373,7 @@ Memory.setChar(int address, int offset, char value);
 ##### Примеры: нема
 ---
 ### Константные классы
-#### ModuleCategory
+#### ModuleCategory - категории для кастомных модулей
 ```
 ModuleCategory.COMBAT
 ModuleCategory.MOVEMENT
@@ -382,7 +382,7 @@ ModuleCategory.MISC
 ModuleCategory.OTHER
 ```
 ---
-#### BlockSide
+#### BlockSide - в основном нужно для LocalPlayer.buildBlock(x, y, z, side) в качестве аргумента side
 ```
 BlockSide.DOWN
 BlockSide.UP
@@ -392,7 +392,7 @@ BlockSide.WEST
 BlockSide.EAST
 ```
 ---
-#### PacketType (ЭТО ТОЖЕ ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
+#### PacketType - тип отправляемого пакета, нужно для onSendPacket (ЭТО ТОЖЕ ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
 ```
 PacketType.ADD_BEHAVIOR_TREE_PACKET
 PacketType.ADD_ENTITY_PACKET
@@ -484,7 +484,7 @@ PacketType.UPDATE_TRADE_PACKET
 PacketType.USE_ITEM_PACKET
 ```
 ---
-#### Hooks
+#### Hooks - все игровые хуки на данный момент
 ```
 onFastTick();
 onLevelTick();
