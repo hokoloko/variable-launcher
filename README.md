@@ -347,7 +347,7 @@
 - `Player.getFallDistance(int playerID);` - возвращает дистанцию с которой падает игрок.
 - `Player.isInCreativeMode(int playerID);` - возвращает `true` если игрок находится в креативе и наоборот.
 - `Player.isInLava(int playerID);` - возвращает `true` если игрок находится в лаве.
-- `Player.isInvisible(int playerID);` - возвращает `true` если игрок находится в ванише (именно в ванише, не под эффектом невидимости).
+- `Player.isInvisible(int playerID);` - возвращает `true` если игрок находится под эффектом невидимости.
 - `Player.isInWall(int playerID);` - возвращает `true` если игрок находится в блоках.
 - `Player.isInWater(int playerID);` - возвращает `true` если игрок находится в воде.
 - `Player.isInWorld(int playerID);` - возвращает `true` если игрок находится на сервере.
