@@ -47,7 +47,7 @@
 - `Data.remove(String key);` - удаляет значение с ключом `key`
 - `Data.clear();` - удаляет все значения скрипта.
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## Module
 ###### Класс для создания кастомных модулей (функции)
@@ -82,7 +82,7 @@
 - `Module.addSetting(String moduleName, Setting setting);`
 - `Module.addSettings(String moduleName, Setting[] settings);`
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## ModuleManager
 ###### Класс для добавления/удаления кастомных модулей
@@ -93,7 +93,7 @@
 - `ModuleManager.removeModule(Module module);` - удаляет модуль.
 - `ModuleManager.getModuleNames();` - возвращает массив с именами всех модулей (имена кастомных модулей тоже).
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## Setting
 ###### Класс для получения какой-либо информации о настройках дефолтных модулей (ситуация та же что и с Module)
@@ -109,7 +109,7 @@
 
 ***Обратите внимание, что каждый из этих методов может бросить `RuntimeException` если вы ошибетесь в названии модуля или настройки.***
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## ButtonSetting
 ###### Класс для создания настройки кнопки. Можно добавлять не только к кастомным модулям, но и к дефолтным
@@ -121,7 +121,7 @@
 - `ButtonSetting.isVisible();` - возвращает `true` если настройка видима и `false` если нет.
 - `ButtonSetting.setVisibility(boolean visibility);` - устанавливает настройке видимость `visibility` (true/false).
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## ModeSetting
 ###### Класс для создания настройки режима. Можно добавлять не только к кастомным модулям, но и к дефолтным
@@ -136,7 +136,7 @@
 - `ModeSetting.getCurrentMode();` - возвращает текущий выбранный режим.
 - `ModeSetting.setOnModeSelectedListener(function(String mode));` - устанавливает действие `function(String mode)` выполняемое после выбора режима.
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## SliderSetting
 ###### Класс для создания настройки ползунка. Можно добавлять не только к кастомным модулям, но и к дефолтным
@@ -151,7 +151,7 @@
 - `SliderSetting.getCurrentValue();` - возвращает текущее значение.
 - `SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));` - устанавливает действие `function(double currentValue)` выполняемое после любого изменения значения.
 
-##### Нема: примеры
+##### Примеры: скоро.
 
 ## StateSetting
 ###### Класс для создания настройки состояния. Можно добавлять не только к кастомным модулям, но и к дефолтным
@@ -166,7 +166,7 @@
 - `StateSetting.isActive();` - возвращает `true` если настройка активна и `false` если нет.
 - `StateSetting.setOnStateToggleListener(function(boolean state));` - устанавливает действие `function(boolean state)` выполняемое при переключении настройки.
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## TextFieldSetting
 ###### Класс для создания настройки текстового поля. Можно добавлять не только к кастомным модулям, но и к дефолтным
@@ -181,190 +181,190 @@
 - `TextFieldSetting.getText();` - возвращает текущий текст.
 - `TextFieldSetting.setOnTextChangedListener(function(String text));` - устанавливает действие `function(String text)` выполняемое при изменении текста.
 
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## Level
 ###### Класс для работы с уровнем/сервером
 ##### Статические методы
-```
-Level.getAddress();
-Level.getPort();
-Level.getAllPlayers();
-Level.getTime();
-Level.getGameSpeed();
 
-Level.setTime(int time);
-Level.setGameSpeed(double speed);
+- `Level.getAddress();` - возвращает строку с адресом сервера на котором ты находишься.
+- `Level.getPort();` - возвращает порт сервера на котором ты находишься.
+- `Level.getAllPlayers();` - возвращает массив с айдишниками всех игроков с сервера.
+- `Level.getTime();` - возвращает время суток в игре.
+- `Level.getGameSpeed();` - возвращает текущую скорость игры.
 
-Level.setTitle(String text);
-Level.setSubtitle(String text);
-Level.displayClientMessage(String text);
-Level.showTipMessage(String text);
-```
-##### Примеры: 1 + 2
+- `Level.setTime(int time);` - устанавливает время суток в игре.
+- `Level.setGameSpeed(double speed);` - устанавливает скорость игры. (по умолчанию 20)
+
+- `Level.setTitle(String text);` - вызывает сообщение на весь экран.
+- `Level.setSubtitle(String text);` - вызывает сообщение на весь экран но поменьше.
+- `Level.displayClientMessage(String text);` - отправляет в чат сообщение которое видишь только ты.
+- `Level.showTipMessage(String text);` - вызывает сообщение-подсказку. (типо как когда берешь предмет в руку)
+
+##### Примеры: скоро.
 
 ## LocalPlayer
 ###### Класс для работы с твоим игроком
 ##### Статические методы
-```
-LocalPlayer.getUniqueID();
-LocalPlayer.getPointedPlayer();
-LocalPlayer.getPointedVector();
-LocalPlayer.attack(int playerID);
-LocalPlayer.attackTp(int playerID);
-LocalPlayer.click(boolean rightClick);
-LocalPlayer.longClick();
-LocalPlayer.buildBlock(int x, int y, int z, int side);
-LocalPlayer.destroyBlock(int x, int y, int z);
-LocalPlayer.openContainer(int x, int y, int z);
-LocalPlayer.openInventory();
-LocalPlayer.closeScreen(); // опасно, может "закрыть" даже рендер всей игры
-LocalPlayer.sendChatMessage(String text);
-LocalPlayer.isMoveButtonPressed(int id);
-LocalPlayer.setStepHeight(double height);
-LocalPlayer.setOnGround(boolean onGround);
-LocalPlayer.setSprinting(boolean sprinting);
-LocalPlayer.setStatusFlag(int flag, boolean status);
-LocalPlayer.addEffect(int id, int duration, int amplifier, boolean showParticles);
-LocalPlayer.removeEffect(int id);
-LocalPlayer.setRot(double yaw, double pitch);
 
-LocalPlayer.setPosition(double x, double y, double z);
-LocalPlayer.setPositionX(double x);
-LocalPlayer.setPositionY(double y);
-LocalPlayer.setPositionZ(double z);
-LocalPlayer.setPositionRelative(double x, double y, double z);
-LocalPlayer.setPositionRelativeX(double x);
-LocalPlayer.setPositionRelativeY(double y);
-LocalPlayer.setPositionRelativeZ(double z);
+- `LocalPlayer.getUniqueID();` - возвращает айди твоего игрока.
+- `LocalPlayer.getPointedPlayer();` - возвращает айди игрока на которого смотрит твой игрок.
+- `LocalPlayer.getPointedVector();` - возвращает массив с координатами по которым направлен взгляд твоего игрока.
+- `LocalPlayer.attack(int playerID);` - атакует игрока с айди `playerID`.
+- `LocalPlayer.attackTp(int playerID);` - атакует игрока с айди `playerID` телепортируясь. Т.е. издалека.
+- `LocalPlayer.click(boolean rightClick);` - кликает ЛКМ если `rightClick` равен `false` и ПКМ если `true`.
+- `LocalPlayer.longClick();` - делает клик с зажатием. Так, например, можно кидать перлы или зельки.
+- `LocalPlayer.buildBlock(int x, int y, int z, int side);` - ставит блок по координатам `x` `y` `z` со [стороной](#blockside) `side`.
+- `LocalPlayer.destroyBlock(int x, int y, int z);` - уничтожает блок по координатам `x` `y` `z`.
+- `LocalPlayer.openContainer(int x, int y, int z);` - открывает контейнер (сундук, верстак и т.п.) по координатам `x` `y` `z`.
+- `LocalPlayer.openInventory();` - открывает инвентарь.
+- `LocalPlayer.closeScreen();` - закрывает ЛЮБОЕ окно (можно даже "закрыть" рендер игры, так что осторожнее).
+- `LocalPlayer.sendChatMessage(String text);` - отправляет в чат сообщение от твоего лица.
+- `LocalPlayer.isMoveButtonPressed(int id);` - возвращает `true` если кнопка с таким-то `id` зажата и `false` если нет.
+- `LocalPlayer.setStepHeight(double height);` - устанавливает высоту шага. (по дефолту 0.5625).
+- `LocalPlayer.setOnGround(boolean onGround);` - устанавливает состояние для переменной `onGround`, проще говоря, игра будет думать что вы на земле, даже если это не так.
+- `LocalPlayer.setSprinting(boolean sprinting);` - включает или выключает спринт на 1 тик в зависимости от `sprinting`.
+- `LocalPlayer.setStatusFlag(int flag, boolean status);` - устанавливает флагу `flag` статус `status`.
+- `LocalPlayer.addEffect(int id, int duration, int amplifier, boolean showParticles);` - добавляет эффект на твоего игрока.
+- `LocalPlayer.removeEffect(int id);` - удаляет эффект с твоего игрока.
+- `LocalPlayer.setRot(double yaw, double pitch);` - поворот головы.
 
-LocalPlayer.setMotion(double x, double y, double z);
-LocalPlayer.setMotionX(double x);
-LocalPlayer.setMotionY(double y);
-LocalPlayer.setMotionZ(double z);
+- `LocalPlayer.setPosition(double x, double y, double z);` - телепорт по координатам `x` `y` `z`.
+- `LocalPlayer.setPositionX(double x);` - телепорт по `x`.
+- `LocalPlayer.setPositionY(double y);` - телепорт по `y`.
+- `LocalPlayer.setPositionZ(double z);` - телепорт по `z`.
+- `LocalPlayer.setPositionRelative(double x, double y, double z);` - телепорт по координатам `x` `y` `z` относительно текущих.
+- `LocalPlayer.setPositionRelativeX(double x);` - телепорт по `x` относительно текущего.
+- `LocalPlayer.setPositionRelativeY(double y);` - телепорт по `y` относительно текущего.
+- `LocalPlayer.setPositionRelativeZ(double z);` - телепорт по `z` относительно текущего.
 
-LocalPlayer.isInGame();
-LocalPlayer.getViewPerspective();
-LocalPlayer.setViewPerspective(int view);
-LocalPlayer.getDistanceTo(int playerID);
-LocalPlayer.getDistanceToCoords(double x, double y, double z);
-LocalPlayer.getNearestPlayer(double radius);
-LocalPlayer.lookAt(int playerID);
-LocalPlayer.smoothLookAt(int playerID, double smoothness);
+- `LocalPlayer.setMotion(double x, double y, double z);` - задает движение по `x` `y` `z`.
+- `LocalPlayer.setMotionX(double x);` - задает скорость движение по `x`
+- `LocalPlayer.setMotionY(double y);` - задает скорость движение по `y`
+- `LocalPlayer.setMotionZ(double z);` - задает скорость движение по `z`
 
-LocalPlayer.getNameTag();
-LocalPlayer.getHealth();
-LocalPlayer.getYaw();
-LocalPlayer.getPitch();
-LocalPlayer.getPositionX();
-LocalPlayer.getPositoinY();
-LocalPlayer.getPositionZ();
-LocalPlayer.getMotionX();
-LocalPlayer.getMotionY();
-LocalPlayer.getMotionZ();
-LocalPlayer.getCollisionSize();
-LocalPlayer.getStatusFlag(int flag);
-LocalPlayer.getFallDistance();
-LocalPlayer.isInCreativeMode();
-LocalPlayer.isInLava();
-LocalPlayer.isInvisible();
-LocalPlayer.isInWall();
-LocalPlayer.isInWater();
-LocalPlayer.isInWorld();
-LocalPlayer.isOnFire();
-LocalPlayer.isOnGround();
-LocalPlayer.isFalling();
-LocalPlayer.isImmobile();
-LocalPlayer.isSitting();
-LocalPlayer.isSneaking();
-LocalPlayer.isAlive();
-LocalPlayer.isOnLadder();
-LocalPlayer.canFly();
-LocalPlayer.canShowNameTag();
-```
-##### Примеры: нема
+- `LocalPlayer.isInGame();` - возвращает `true` если ты находишься в мире или на сервере и наоборот.
+- `LocalPlayer.getViewPerspective();` - возвращает число в зависимости от выбранного вида.
+- `LocalPlayer.setViewPerspective(int view);` - устанавливает вид (типа F5)
+- `LocalPlayer.getDistanceTo(int playerID);` - возвращает дистанцию до игрока с айди `playerID` в блоках.
+- `LocalPlayer.getDistanceToCoords(double x, double y, double z);` - возвращает дистанцию до координат `x` `y` `z` в блоках.
+- `LocalPlayer.getNearestPlayer(double radius);` - возвращает айди ближайшего игрока в радиусе `radius`.
+- `LocalPlayer.lookAt(int playerID);` - резко поворачивает голову в сторону игрока `playerID`
+- `LocalPlayer.smoothLookAt(int playerID, double smoothness);` - плавно поворачивает голову в сторону игрока с айди `playerID` с плавностью `smoothness` (чтобы работало нужно использовать либо в `onFastTick` либо в `onLevelTick`).
+
+- `LocalPlayer.getNameTag();` - возвращает строку с никнеймом.
+- `LocalPlayer.getHealth();` - возвращает текущее здоровье.
+- `LocalPlayer.getYaw();` - возвращает поворот головы по горизонтали в градусах.
+- `LocalPlayer.getPitch();` - возвращает поворот головы по вертикали в градусах.
+- `LocalPlayer.getPositionX();` - возвращает позицию по `x`.
+- `LocalPlayer.getPositoinY();` - возвращает позицию по `y`.
+- `LocalPlayer.getPositionZ();` - возвращает позицию по `z`.
+- `LocalPlayer.getMotionX();` - возвращает скорость движения по `x`.
+- `LocalPlayer.getMotionY();` - возвращает скорость движения по `y`.
+- `LocalPlayer.getMotionZ();` - возвращает скорость движения по `z`.
+- `LocalPlayer.getCollisionSize();` - возвращает массив с размерами хитбокса по горизонтали и вертикали.
+- `LocalPlayer.getStatusFlag(int flag);` - возвращает  `true` если флаг `flag` активен и наоборот.
+- `LocalPlayer.getFallDistance();` - возвращает дистанцию с которой падает игрок.
+- `LocalPlayer.isInCreativeMode();` - возвращает `true` если игрок находится в креативе и наоборот.
+- `LocalPlayer.isInLava();` - возвращает `true` если игрок находится в лаве.
+- `LocalPlayer.isInvisible();` - возвращает `true` если игрок находится в ванише (именно в ванише, не под эффектом невидимости).
+- `LocalPlayer.isInWall();` - возвращает `true` если игрок находится в блоках.
+- `LocalPlayer.isInWater();` - возвращает `true` если игрок находится в воде.
+- `LocalPlayer.isOnFire();` - возвращает `true` если игрок находится в огне.
+- `LocalPlayer.isOnGround();` - возвращает `true` если игрок находится на земле.
+- `LocalPlayer.isFalling();` - возвращает `true` если игрок падает.
+- `LocalPlayer.isImmobile();` - возвращает `true` если игрок не может двигаться.
+- `LocalPlayer.isSitting();` - возвращает `true` если игрок сидит.
+- `LocalPlayer.isSneaking();` - возвращает `true` если игрок на шифте.
+- `LocalPlayer.isAlive();` - возвращает `true` если игрок живой.
+- `LocalPlayer.isOnLadder();` - возвращает `true` если игрок находится на лестнице.
+- `LocalPlayer.canFly();` - возвращает `true` если игрок может летать.
+- `LocalPlayer.canShowNameTag();` - возвращает `true` если ник игрока видимый.
+
+##### Примеры: скоро.
 
 ## Inventory
 ###### Класс для работы с твоим инвентарем
 ##### Статические методы
-```
-Inventory.swapSlots(int fromSlot, int toSlot);
-Inventory.dropSlot(int slot, boolean dropAll, boolean deleteDrop);
-Inventory.clearSlot(int slot);
-Inventory.getSelectedSlot();
-Inventory.getOffhandSlot();
-Inventory.getArmor(int armorSlot);
-Inventory.setSelectedSlot(int slot);
-Inventory.setArmor(int slot, int armorSlot);
-```
-##### Примеры: нема
+
+- `Inventory.swapSlots(int fromSlot, int toSlot);` - меняет слоты `fromSlot` и `toSlot` местами.
+- `Inventory.dropSlot(int slot, boolean dropAll, boolean deleteDrop);` - выкидывает предмет из слота `slot`. Если dropAll равен `true` - выкидывает весь стак. Если deleteDrop равен `true` - удаляет выкидываемый предмет.
+- `Inventory.clearSlot(int slot);` - очищает слот `slot`.
+- `Inventory.getSelectedSlot();` - возвращает айди выбранного слота.
+- `Inventory.getOffhandSlot();` - возвращает айди предмета в левой руке.
+- `Inventory.getArmor(int armorSlot);` - возвращает айди предмета в слоте брони `armorSlot` (от 0 до 3).
+- `Inventory.setSelectedSlot(int slot);` - выбирает слот `slot` из хотбара (от 0 до 8).
+- `Inventory.setArmor(int slot, int armorSlot);` - надевает предмет из слота `slot` в слот брони `armorSlot`.
+
+##### Примеры: скоро.
 
 ## Item
 ###### Класс для работы с предметами из твоего инвентаря
 ##### Статические методы
-```
-Item.getID(int slot);
-Item.getData(int slot);
-Item.getName(int slot);
-Item.getUseDuration(int slot);
-Item.getMaxStackSize(int slot);
-Item.getMaxDamage(int slot);
-Item.getDamage(int slot);
-Item.getCount(int slot);
-Item.isArmor(int slot);
-Item.isBlock(int slot);
-Item.isDamageable(int slot);
-Item.isStackable(int slot);
-Item.isFullStack(int slot);
-Item.isThrowable(int slot);
-Item.isDamaged(int slot);
-Item.isEnchantingBook(int slot);
-Item.isPotion(int slot);
-Item.isEnchanted(int slot);
-Item.setUseDuration(int slot, int duration);
-Item.setCount(int slot, int count);
-```
-##### Примеры: нема
+
+- `Item.getID(int slot);` - возващает айди предмета из слота `slot`.
+- `Item.getData(int slot);` - возвращает вторичный айди предмета из слота `slot`. (Например, если предмет в слоте `slot` - диорит, то вернет 3).
+- `Item.getName(int slot);` - возвращает имя предмета из слота `slot`.
+- `Item.getUseDuration(int slot);` - возвращает длительность использования предмета из слота `slot`.
+- `Item.getMaxStackSize(int slot);` - возвращает максимальный размер стака предмета из слота `slot`.
+- `Item.getMaxDamage(int slot);` - возвращает максимальную прочность предмета из слота `slot`.
+- `Item.getDamage(int slot);` - возвращает текущую прочность предмета из слота `slot`.
+- `Item.getCount(int slot);` - возвращает текущее количество предметов в слоте `slot`.
+- `Item.isArmor(int slot);` - возвращает `true` если предмет из слота `slot` является броней.
+- `Item.isBlock(int slot);` - возвращает `true` если предмет из слота `slot` является блоком.
+- `Item.isDamageable(int slot);` - возвращает `true` если предмет из слота `slot` имеет прочность.
+- `Item.isStackable(int slot);` - возвращает `true` если предмет из слота `slot` стакается.
+- `Item.isFullStack(int slot);` - возвращает `true` если в слоте `slot` находится стак любых предметов.
+- `Item.isThrowable(int slot);` - возвращает `true` если предмет из слота `slot` можно метать. (перл, снежок и т.п.)
+- `Item.isDamaged(int slot);` - возвращает `true` если предмет из слота `slot` имеет не полную прочность.
+- `Item.isEnchantingBook(int slot);` - возвращает `true` если предмет из слота `slot` является книгой зачарования.
+- `Item.isPotion(int slot);` - возвращает `true` если предмет из слота `slot` является зельем.
+- `Item.isEnchanted(int slot);` - возвращает `true` если предмет из слота `slot` зачарован.
+- `Item.setUseDuration(int slot, int duration);` - устанавливает предмету из слота `slot` длительность использования `duration`.
+- `Item.setCount(int slot, int count);` - устанавливает количество предметов из слота `slot` на `count`.
+
+##### Примеры: скоро.
 
 ## Player
 ###### Класс для работы с игроками на сервере
 ##### Статические методы
-```
-Player.isLocalPlayer(int playerID);
-Player.getNameTag(int playerID);
-Player.getHealth(int playerID);
-Player.getYaw(int playerID);
-Player.getPitch(int playerID);
-Player.getPositionX(int playerID);
-Player.getPositoinY(int playerID);
-Player.getPositionZ(int playerID);
-Player.getMotionX(int playerID);
-Player.getMotionY(int playerID);
-Player.getMotionZ(int playerID);
-Player.getCollisionSize(int playerID);
-Player.setCollisionSize(int playerID, double horizontal, double vertical);
-Player.setShadowRadius(int playerID, double radius);
-Player.getStatusFlag(int playerID, int flag);
-Player.getFallDistance(int playerID);
-Player.isInCreativeMode(int playerID);
-Player.isInLava(int playerID);
-Player.isInvisible(int playerID);
-Player.isInWall(int playerID);
-Player.isInWater(int playerID);
-Player.isInWorld(int playerID);
-Player.isOnFire(int playerID);
-Player.isOnGround(int playerID);
-Player.isFalling(int playerID);
-Player.isImmobile(int playerID);
-Player.isSitting(int playerID);
-Player.isSneaking(int playerID);
-Player.isMoving(int playerID);
-Player.isAlive(int playerID);
-Player.isOnLadder(int playerID);
-Player.canFly(int playerID);
-Player.canShowNameTag(int playerID);
-```
-##### Примеры: нема
+
+- `Player.isLocalPlayer(int playerID);` - возвращает `true` если игрок является локальным игроком (тобой).
+- `Player.getNameTag(int playerID);` - возвращает никнейм игрока.
+- `Player.getHealth(int playerID);` - возвращает текущее количество здоровья игрока.
+- `Player.getYaw(int playerID);` - возвращает поворот головы по горизонтали в градусах.
+- `Player.getPitch(int playerID);` - возвращает поворот головы по вертикали в градусах.
+- `Player.getPositionX(int playerID);` - возвращает позицию по `x`.
+- `Player.getPositoinY(int playerID);` - возвращает позицию по `y`.
+- `Player.getPositionZ(int playerID);` - возвращает позицию по `z`.
+- `Player.getMotionX(int playerID);` - возвращает скорость движения по `x`.
+- `Player.getMotionY(int playerID);` - возвращает скорость движения по `y`.
+- `Player.getMotionZ(int playerID);` - возвращает скорость движения по `z`.
+- `Player.getCollisionSize(int playerID);` - возвращает массив с размерами хитбокса игрока по горизонтали и вертикали.
+- `Player.setCollisionSize(int playerID, double horizontal, double vertical);` - устанавливает размеры хитбокса игрока по горизонтали `horizontal` и по вертикали `vertical`.
+- `Player.setShadowRadius(int playerID, double radius);` - устанавливает радиус `radius` теней игрока.
+- `Player.getStatusFlag(int playerID, int flag);` - возвращает  `true` если у игрока активен флаг `flag` и наоборот.
+- `Player.getFallDistance(int playerID);` - возвращает дистанцию с которой падает игрок.
+- `Player.isInCreativeMode(int playerID);` - возвращает `true` если игрок находится в креативе и наоборот.
+- `Player.isInLava(int playerID);` - возвращает `true` если игрок находится в лаве.
+- `Player.isInvisible(int playerID);` - возвращает `true` если игрок находится в ванише (именно в ванише, не под эффектом невидимости).
+- `Player.isInWall(int playerID);` - возвращает `true` если игрок находится в блоках.
+- `Player.isInWater(int playerID);` - возвращает `true` если игрок находится в воде.
+- `Player.isInWorld(int playerID);` - возвращает `true` если игрок находится на сервере.
+- `Player.isOnFire(int playerID);` - возвращает `true` если игрок находится в огне.
+- `Player.isOnGround(int playerID);` - возвращает `true` если игрок находится на земле.
+- `Player.isFalling(int playerID);` - возвращает `true` если игрок падает.
+- `Player.isImmobile(int playerID);` - возвращает `true` если игрок не может двигаться.
+- `Player.isSitting(int playerID);` - возвращает `true` если игрок сидит.
+- `Player.isSneaking(int playerID);` - возвращает `true` если игрок на шифте.
+- `Player.isAlive(int playerID);` - возвращает `true` если игрок живой.
+- `Player.isOnLadder(int playerID);` - возвращает `true` если игрок находится на лестнице.
+- `Player.canFly(int playerID);` - возвращает `true` если игрок может летать.
+- `Player.canShowNameTag(int playerID);` - возвращает `true` если ник игрока видимый.
+- 
+***Аргумент `playerID` - это айди игрока.***
+
+##### Примеры: скоро.
 
 ## Block
 ###### Класс для работы с блоками
@@ -379,7 +379,7 @@ Block.isInteractive(int x, int y, int z);
 Block.setFriction(int x, int y, int z);
 Block.setDestroyTime(int x, int y, int z, double time);
 ```
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## Memory
 ###### Класс для работы с памятью (ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
@@ -410,7 +410,7 @@ Memory.setInt(int address, int offset, int value);
 Memory.setFloat(int address, int offset, float value);
 Memory.setChar(int address, int offset, char value);
 ```
-##### Примеры: нема
+##### Примеры: скоро.
 
 ## Константные классы
 ### ModuleCategory
@@ -542,4 +542,4 @@ onServerConnect(String address, int port);
 onServerDisconnect();
 onSendPacket(String name, int address); (ТОЖЕ ДЛЯ ОСОБО УМНЫХ)
 ```
-##### Примеры: не
+##### Примеры: скоро.
