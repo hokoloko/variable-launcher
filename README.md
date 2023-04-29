@@ -543,5 +543,3 @@ PacketType.USE_ITEM_PACKET
 - `onServerConnect(String address, int port);` - вызывается когда ты заходишь на сервер. `address` - адрес сервера, `port` - порт сервера.
 - `onServerDisconnect();` - вызывается когда ты выходишь с сервера.
 - `onSendPacket(String name, int address);` - вызывается при отправке пакета. `name` - название пакета, `address` - адрес пакета в памяти. (ТОЖЕ ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
-
-##### Примеры: скоро.
