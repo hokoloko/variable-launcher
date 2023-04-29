@@ -83,7 +83,7 @@ Setting.getText(String moduleName, String settingName); // Для настрое
 ```
 ##### Примеры: нема
 ---
-#### ButtonSetting - класс для создания настройки кнопки
+#### ButtonSetting - класс для создания настройки кнопки. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `ButtonSetting(String name, function(View view));`
 ##### Методы
 ```
@@ -94,7 +94,7 @@ ButtonSetting.setVisibility(boolean visibility);
 ```
 ##### Примеры: нема
 ---
-#### ModeSetting - класс для создания настройки режима
+#### ModeSetting - класс для создания настройки режима. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `ModeSetting(String name, String[] modes);`
 ##### Методы
 ```
@@ -108,7 +108,7 @@ ModeSetting.setOnModeSelectedListener(function(String mode));
 ```
 ##### Примеры: нема
 ---
-#### SliderSetting - класс для создания настройки ползунка
+#### SliderSetting - класс для создания настройки ползунка. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `SliderSetting(String name, [double default, double min, double max, double step]);`
 ##### Методы
 ```
@@ -122,7 +122,7 @@ SliderSetting.setOnCurrentValueChangedListener(function(double currentValue));
 ```
 ##### Нема: примеры
 ---
-#### StateSetting - класс для создания настройки состояния
+#### StateSetting - класс для создания настройки состояния. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `StateSetting(String name, boolean state);`
 ##### Методы
 ```
@@ -136,7 +136,7 @@ StateSetting.setOnStateToggleListener(function(boolean state));
 ```
 ##### Примеры: нема
 ---
-#### TextFieldSetting - класс для создания настройки текстового поля
+#### TextFieldSetting - класс для создания настройки текстового поля. Можно добавлять не только к кастомным модулям, но и к дефолтным
 ##### Конструктор: `TextFieldSetting(String name, String hint, String text);`
 ##### Методы
 ```
