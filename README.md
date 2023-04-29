@@ -384,32 +384,34 @@
 ## Memory
 ###### Класс для работы с памятью (ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)
 ##### Статические методы
-```
-Memory.patch(int address, int[] patch);
-Memory.getLibrary();
-Memory.getSymbol(String symbol);
-Memory.getPlayer(int playerID);
-Memory.getLocalPlayer();
-Memory.getGameMode();
-Memory.getHitResult();
-Memory.getLevel();
-Memory.getDimension();
-Memory.getLevelRenderer();
-Memory.getOptions();
-Memory.getTimer();
 
-Memory.getString(int address, int offset);
-Memory.getBoolean(int address, int offset);
-Memory.getInt(int address, int offset);
-Memory.getFloat(int address, int offset);
-Memory.getChar(int address, int offset);
+- `Memory.patch(int address, int[] patch);` - редактирует участок памяти по адресу `address` на `patch`.
+- `Memory.getLibrary();` - возвращает адрес либы майна.
+- `Memory.getSymbol(String symbol);` - возвращает адрес символа `symbol` относительно либы.
+- `Memory.getPlayer(int playerID);` - возвращает адрес игрока с айди `playerID` внутри игры.
+- `Memory.getLocalPlayer();` - возвращает адрес локального игрока (твой).
+- `Memory.getGameMode();` - возвращает адрес объекта `GameMode`.
+- `Memory.getHitResult();` - возвращает адрес объекта `HitResult`.
+- `Memory.getLevel();` - возвращает адрес объекта `Level`.
+- `Memory.getDimension();` - возвращает адрес объекта `Dimension`.
+- `Memory.getLevelRenderer();` - возвращает адрес объекта `LevelRenderer`.
+- `Memory.getOptions();` - возвращает адрес объекта `Options`.
+- `Memory.getTimer();` - возвращает адрес объекта `Timer`.
 
-Memory.setString(int address, int offset, String value);
-Memory.setBoolean(int address, int offset, boolean value);
-Memory.setInt(int address, int offset, int value);
-Memory.setFloat(int address, int offset, float value);
-Memory.setChar(int address, int offset, char value);
-```
+- `Memory.getString(int address, int offset);` - возвращает строку с адреса `address` и смещением `offset`.
+- `Memory.getBoolean(int address, int offset);` - возвращает логическое значение с адреса `address` и смещением `offset`.
+- `Memory.getInt(int address, int offset);` - возвращает число с адреса `address` и смещением `offset`.
+- `Memory.getFloat(int address, int offset);` - возвращает число с плавающей точкой с адреса `address` и смещением `offset`.
+- `Memory.getChar(int address, int offset);` - возвращает символ с адреса `address` и смещением `offset`.
+
+- `Memory.setString(int address, int offset, String value);` - заменяет строку по адресу `address` и смещением `offset` на `value`.
+- `Memory.setBoolean(int address, int offset, boolean value);` - заменяет логическое значение по адресу `address` и смещением `offset` на `value`.
+- `Memory.setInt(int address, int offset, int value);` - заменяет число по адресу `address` и смещением `offset` на `value`.
+- `Memory.setFloat(int address, int offset, float value);` - заменяет число с плавающей точкой по адресу `address` и смещением `offset` на `value`.
+- `Memory.setChar(int address, int offset, char value);` - заменяет символ по адресу `address` и смещением `offset` на `value`.
+
+***Внимание: этот класс очень опасная хуйня, если не шарите - не рекомендую вообще к нему прикосаться, иначе ни один метод не будет делать ничего, кроме как вызывать краш игры.***
+
 ##### Примеры: скоро.
 
 ## Константные классы
