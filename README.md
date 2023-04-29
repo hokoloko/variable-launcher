@@ -36,13 +36,13 @@
 ###### Класс для сохранения любых данных скрипта в корневой папке приложения
 ##### Статические методы
 
-- `Data.getString(String key, String defaultValue);` - ищет строку с ключом `key` и возвращает `defaultValue` если не находит его.
-- `Data.getNumber(String key, double defaultValue);` - ищет число с ключом `key` и возвращает `defaultValue` если не находит его.
-- `Data.getBoolean(String key, boolean defaultValue);` - ищет логическое значение (true/false) с ключом `key` и возвращает `defaultValue` если не находит его
+- `Data.getString(String key, String defaultValue);` - ищет строку с ключом `key` и возвращает ее. Возвращает `defaultValue` если не находит ее.
+- `Data.getNumber(String key, double defaultValue);` - ищет число с ключом `key` и возвращает его. Возвращает `defaultValue` если не находит его.
+- `Data.getBoolean(String key, boolean defaultValue);` - ищет логическое значение (true/false) с ключом `key` и возвращает его. Возвращает `defaultValue` если не находит его.
 
-- `Data.saveString(String key, String value);` - сохраняет строку с ключом `key` и значением `defaultValue`.
-- `Data.saveNumber(String key, double value);` - сохраняет число с ключом `key` и значением `defaultValue`.
-- `Data.saveBoolean(String key, boolean value);` - сохраняет логическое значение (true/false) с ключом `key` и значением `defaultValue`.
+- `Data.saveString(String key, String value);` - сохраняет строку с ключом `key` и значением `value`.
+- `Data.saveNumber(String key, double value);` - сохраняет число с ключом `key` и значением `value`.
+- `Data.saveBoolean(String key, boolean value);` - сохраняет логическое значение (true/false) с ключом `key` и значением `value`.
 
 - `Data.remove(String key);` - удаляет значение с ключом `key`
 - `Data.clear();` - удаляет все значения скрипта.
