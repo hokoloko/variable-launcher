@@ -373,7 +373,7 @@
 - `Block.getID(int x, int y, int z);` - возвращает айди блока.
 - `Block.getBrightness(int x, int y, int z);` - возвращает яркость блока.
 - `Block.getFriction(int x, int y, int z);` - возвращает скольжение блока.
-- `Block.isSolid(int x, int y, int z);` - возвращает `true` если блок является тревдым и наоборот. (Например, если блок является сундуком, вернет `false`)
+- `Block.isSolid(int x, int y, int z);` - возвращает `true` если блок является полным и наоборот. (Например, если блок является сундуком, вернет `false`)
 - `Block.setFriction(int x, int y, int z, double friction);` - устанавливает скольжение `friction` для всех блоков подобных тому, что находится по координатам.
 - `Block.setDestroyTime(int x, int y, int z, double time);` - устанавливает длительность разрушения `time` для всех блоков подобных тому, что находится по координатам.
 
