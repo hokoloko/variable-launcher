@@ -14,11 +14,11 @@
 - [StateSetting](#statesetting)
 - [TextFieldSetting](#textfieldsetting)
 - [Level](#level)
+- [Block](#block)
 - [LocalPlayer](#localplayer)
+- [Player](#player)
 - [Inventory](#inventory)
 - [Item](#item)
-- [Player](#player)
-- [Block](#block)
 - [Memory](#memory)
 - [Константые классы](#константные-классы)
   - [ModuleCategory](#modulecategory)
@@ -203,6 +203,19 @@
 
 **Примеры: скоро.**
 
+## Block
+*Класс для работы с блоками*<br/>
+**Статические методы**
+
+- `Block.getID(int x, int y, int z);` - возвращает айди блока по координатам `x` `y` `z`.
+- `Block.getBrightness(int x, int y, int z);` - возвращает яркость блока по координатам `x` `y` `z`.
+- `Block.getFriction(int id);` - возвращает скольжение блока с айди `id`.
+- `Block.isSolid(int id);` - возвращает `true` если блок с айди `id` является полным и наоборот. (Например, если блок является сундуком, вернет `false`)
+- `Block.setFriction(int id, double friction);` - устанавливает скольжение `friction` для блока с айди `id`.
+- `Block.setDestroyTime(int id, double time);` - устанавливает длительность разрушения `time` для блока с айди `id`.
+
+**Примеры: скоро.**
+
 ## LocalPlayer
 *Класс для работы с твоим игроком*<br/>
 **Статические методы**
@@ -283,47 +296,6 @@
 
 **Примеры: скоро.**
 
-## Inventory
-*Класс для работы с твоим инвентарем*<br/>
-**Статические методы**
-
-- `Inventory.swapSlots(int fromSlot, int toSlot);` - меняет слоты `fromSlot` и `toSlot` местами.
-- `Inventory.dropSlot(int slot, boolean dropAll, boolean deleteDrop);` - выкидывает предмет из слота `slot`. Если dropAll равен `true` - выкидывает весь стак. Если deleteDrop равен `true` - удаляет выкидываемый предмет.
-- `Inventory.clearSlot(int slot);` - очищает слот `slot`.
-- `Inventory.getSelectedSlot();` - возвращает айди выбранного слота.
-- `Inventory.getOffhandSlot();` - возвращает айди предмета в левой руке.
-- `Inventory.getArmor(int armorSlot);` - возвращает айди предмета в слоте брони `armorSlot` (от 0 до 3).
-- `Inventory.setSelectedSlot(int slot);` - выбирает слот `slot` из хотбара (от 0 до 8).
-- `Inventory.setArmor(int slot, int armorSlot);` - надевает предмет из слота `slot` в слот брони `armorSlot`.
-
-**Примеры: скоро.**
-
-## Item
-*Класс для работы с предметами из твоего инвентаря*<br/>
-**Статические методы**
-
-- `Item.getID(int slot);` - возващает айди предмета из слота `slot`.
-- `Item.getData(int slot);` - возвращает вторичный айди предмета из слота `slot`. (Например, если предмет в слоте `slot` - диорит, то вернет 3).
-- `Item.getName(int slot);` - возвращает имя предмета из слота `slot`.
-- `Item.getUseDuration(int slot);` - возвращает длительность использования предмета из слота `slot`.
-- `Item.getMaxStackSize(int slot);` - возвращает максимальный размер стака предмета из слота `slot`.
-- `Item.getMaxDamage(int slot);` - возвращает максимальную прочность предмета из слота `slot`.
-- `Item.getDamage(int slot);` - возвращает текущую прочность предмета из слота `slot`.
-- `Item.getCount(int slot);` - возвращает текущее количество предметов в слоте `slot`.
-- `Item.isArmor(int slot);` - возвращает `true` если предмет из слота `slot` является броней.
-- `Item.isBlock(int slot);` - возвращает `true` если предмет из слота `slot` является блоком.
-- `Item.isDamageable(int slot);` - возвращает `true` если предмет из слота `slot` имеет прочность.
-- `Item.isStackable(int slot);` - возвращает `true` если предмет из слота `slot` стакается.
-- `Item.isFullStack(int slot);` - возвращает `true` если в слоте `slot` находится стак любых предметов.
-- `Item.isThrowable(int slot);` - возвращает `true` если предмет из слота `slot` можно метать. (перл, снежок и т.п.)
-- `Item.isDamaged(int slot);` - возвращает `true` если предмет из слота `slot` имеет не полную прочность.
-- `Item.isPotion(int slot);` - возвращает `true` если предмет из слота `slot` является зельем.
-- `Item.isEnchanted(int slot);` - возвращает `true` если предмет из слота `slot` зачарован.
-- `Item.setUseDuration(int slot, int duration);` - устанавливает предмету из слота `slot` длительность использования `duration`.
-- `Item.setCount(int slot, int count);` - устанавливает количество предметов из слота `slot` на `count`.
-
-**Примеры: скоро.**
-
 ## Player
 *Класс для работы с игроками на сервере*<br/>
 **Статические методы**
@@ -365,16 +337,44 @@
 
 **Примеры: скоро.**
 
-## Block
-*Класс для работы с блоками*<br/>
+## Inventory
+*Класс для работы с твоим инвентарем*<br/>
 **Статические методы**
 
-- `Block.getID(int x, int y, int z);` - возвращает айди блока по координатам `x` `y` `z`.
-- `Block.getBrightness(int x, int y, int z);` - возвращает яркость блока по координатам `x` `y` `z`.
-- `Block.getFriction(int id);` - возвращает скольжение блока с айди `id`.
-- `Block.isSolid(int id);` - возвращает `true` если блок с айди `id` является полным и наоборот. (Например, если блок является сундуком, вернет `false`)
-- `Block.setFriction(int id, double friction);` - устанавливает скольжение `friction` для блока с айди `id`.
-- `Block.setDestroyTime(int id, double time);` - устанавливает длительность разрушения `time` для блока с айди `id`.
+- `Inventory.swapSlots(int fromSlot, int toSlot);` - меняет слоты `fromSlot` и `toSlot` местами.
+- `Inventory.dropSlot(int slot, boolean dropAll, boolean deleteDrop);` - выкидывает предмет из слота `slot`. Если dropAll равен `true` - выкидывает весь стак. Если deleteDrop равен `true` - удаляет выкидываемый предмет.
+- `Inventory.clearSlot(int slot);` - очищает слот `slot`.
+- `Inventory.getSelectedSlot();` - возвращает айди выбранного слота.
+- `Inventory.getOffhandSlot();` - возвращает айди предмета в левой руке.
+- `Inventory.getArmor(int armorSlot);` - возвращает айди предмета в слоте брони `armorSlot` (от 0 до 3).
+- `Inventory.setSelectedSlot(int slot);` - выбирает слот `slot` из хотбара (от 0 до 8).
+- `Inventory.setArmor(int slot, int armorSlot);` - надевает предмет из слота `slot` в слот брони `armorSlot`.
+
+**Примеры: скоро.**
+
+## Item
+*Класс для работы с предметами из твоего инвентаря*<br/>
+**Статические методы**
+
+- `Item.getID(int slot);` - возващает айди предмета из слота `slot`.
+- `Item.getData(int slot);` - возвращает вторичный айди предмета из слота `slot`. (Например, если предмет в слоте `slot` - диорит, то вернет 3).
+- `Item.getName(int slot);` - возвращает имя предмета из слота `slot`.
+- `Item.getUseDuration(int slot);` - возвращает длительность использования предмета из слота `slot`.
+- `Item.getMaxStackSize(int slot);` - возвращает максимальный размер стака предмета из слота `slot`.
+- `Item.getMaxDamage(int slot);` - возвращает максимальную прочность предмета из слота `slot`.
+- `Item.getDamage(int slot);` - возвращает текущую прочность предмета из слота `slot`.
+- `Item.getCount(int slot);` - возвращает текущее количество предметов в слоте `slot`.
+- `Item.isArmor(int slot);` - возвращает `true` если предмет из слота `slot` является броней.
+- `Item.isBlock(int slot);` - возвращает `true` если предмет из слота `slot` является блоком.
+- `Item.isDamageable(int slot);` - возвращает `true` если предмет из слота `slot` имеет прочность.
+- `Item.isStackable(int slot);` - возвращает `true` если предмет из слота `slot` стакается.
+- `Item.isFullStack(int slot);` - возвращает `true` если в слоте `slot` находится стак любых предметов.
+- `Item.isThrowable(int slot);` - возвращает `true` если предмет из слота `slot` можно метать. (перл, снежок и т.п.)
+- `Item.isDamaged(int slot);` - возвращает `true` если предмет из слота `slot` имеет не полную прочность.
+- `Item.isPotion(int slot);` - возвращает `true` если предмет из слота `slot` является зельем.
+- `Item.isEnchanted(int slot);` - возвращает `true` если предмет из слота `slot` зачарован.
+- `Item.setUseDuration(int slot, int duration);` - устанавливает предмету из слота `slot` длительность использования `duration`.
+- `Item.setCount(int slot, int count);` - устанавливает количество предметов из слота `slot` на `count`.
 
 **Примеры: скоро.**
 
