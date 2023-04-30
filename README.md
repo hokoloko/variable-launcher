@@ -369,14 +369,12 @@
 *Класс для работы с блоками*<br/>
 **Статические методы**
 
-- `Block.getID(int x, int y, int z);` - возвращает айди блока.
-- `Block.getBrightness(int x, int y, int z);` - возвращает яркость блока.
+- `Block.getID(int x, int y, int z);` - возвращает айди блока по координатам `x` `y` `z`.
+- `Block.getBrightness(int x, int y, int z);` - возвращает яркость блока по координатам `x` `y` `z`.
 - `Block.getFriction(int id);` - возвращает скольжение блока с айди `id`.
-- `Block.isSolid(int x, int y, int z);` - возвращает `true` если блок является полным и наоборот. (Например, если блок является сундуком, вернет `false`)
+- `Block.isSolid(int id);` - возвращает `true` если блок с айди `id` является полным и наоборот. (Например, если блок является сундуком, вернет `false`)
 - `Block.setFriction(int id, double friction);` - устанавливает скольжение `friction` для блока с айди `id`.
 - `Block.setDestroyTime(int id, double time);` - устанавливает длительность разрушения `time` для блока с айди `id`.
-
-***Аргументы `x`, `y` и `z` - это координаты блока.***
 
 **Примеры: скоро.**
 
