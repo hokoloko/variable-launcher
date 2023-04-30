@@ -238,10 +238,10 @@
 - `LocalPlayer.setPositionRelativeY(double y);` - телепорт по `y` относительно текущего.
 - `LocalPlayer.setPositionRelativeZ(double z);` - телепорт по `z` относительно текущего.
 
-- `LocalPlayer.setMotion(double x, double y, double z);` - задает движение по `x` `y` `z`.
-- `LocalPlayer.setMotionX(double x);` - задает скорость движение по `x`
-- `LocalPlayer.setMotionY(double y);` - задает скорость движение по `y`
-- `LocalPlayer.setMotionZ(double z);` - задает скорость движение по `z`
+- `LocalPlayer.setVelocity(double x, double y, double z);` - задает ускорение по `x` `y` `z`.
+- `LocalPlayer.setVelocityX(double x);` - задает ускорение по `x`
+- `LocalPlayer.setVelocityY(double y);` - задает ускорение по `y`
+- `LocalPlayer.setVelocityZ(double z);` - задает ускорение по `z`
 
 - `LocalPlayer.isInGame();` - возвращает `true` если ты находишься в мире или на сервере и наоборот.
 - `LocalPlayer.getViewPerspective();` - возвращает число в зависимости от выбранного вида.
@@ -259,9 +259,9 @@
 - `LocalPlayer.getPositionX();` - возвращает позицию по `x`.
 - `LocalPlayer.getPositoinY();` - возвращает позицию по `y`.
 - `LocalPlayer.getPositionZ();` - возвращает позицию по `z`.
-- `LocalPlayer.getMotionX();` - возвращает скорость движения по `x`.
-- `LocalPlayer.getMotionY();` - возвращает скорость движения по `y`.
-- `LocalPlayer.getMotionZ();` - возвращает скорость движения по `z`.
+- `LocalPlayer.getVelocityX();` - возвращает ускорение по `x`.
+- `LocalPlayer.getVelocityY();` - возвращает ускорение по `y`.
+- `LocalPlayer.getVelocityZ();` - возвращает ускорение по `z`.
 - `LocalPlayer.getCollisionSize();` - возвращает массив с размерами хитбокса по горизонтали и вертикали.
 - `LocalPlayer.getStatusFlag(int flag);` - возвращает  `true` если флаг `flag` активен и наоборот.
 - `LocalPlayer.getFallDistance();` - возвращает дистанцию с которой падает игрок.
@@ -336,9 +336,9 @@
 - `Player.getPositionX(int playerID);` - возвращает позицию по `x`.
 - `Player.getPositoinY(int playerID);` - возвращает позицию по `y`.
 - `Player.getPositionZ(int playerID);` - возвращает позицию по `z`.
-- `Player.getMotionX(int playerID);` - возвращает скорость движения по `x`.
-- `Player.getMotionY(int playerID);` - возвращает скорость движения по `y`.
-- `Player.getMotionZ(int playerID);` - возвращает скорость движения по `z`.
+- `Player.getVelocityX(int playerID);` - возвращает ускорение по `x`.
+- `Player.getVelocityY(int playerID);` - возвращает ускорение по `y`.
+- `Player.getVelocityZ(int playerID);` - возвращает ускорение по `z`.
 - `Player.getCollisionSize(int playerID);` - возвращает массив с размерами хитбокса игрока по горизонтали и вертикали.
 - `Player.setCollisionSize(int playerID, double horizontal, double vertical);` - устанавливает размеры хитбокса игрока по горизонтали `horizontal` и по вертикали `vertical`.
 - `Player.setShadowRadius(int playerID, double radius);` - устанавливает радиус `radius` теней игрока.
