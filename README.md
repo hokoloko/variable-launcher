@@ -317,7 +317,6 @@
 - `Item.isFullStack(int slot);` - возвращает `true` если в слоте `slot` находится стак любых предметов.
 - `Item.isThrowable(int slot);` - возвращает `true` если предмет из слота `slot` можно метать. (перл, снежок и т.п.)
 - `Item.isDamaged(int slot);` - возвращает `true` если предмет из слота `slot` имеет не полную прочность.
-- `Item.isEnchantingBook(int slot);` - возвращает `true` если предмет из слота `slot` является книгой зачарования.
 - `Item.isPotion(int slot);` - возвращает `true` если предмет из слота `slot` является зельем.
 - `Item.isEnchanted(int slot);` - возвращает `true` если предмет из слота `slot` зачарован.
 - `Item.setUseDuration(int slot, int duration);` - устанавливает предмету из слота `slot` длительность использования `duration`.
