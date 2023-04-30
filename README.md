@@ -247,9 +247,9 @@
 - `LocalPlayer.setPositionY(double y);` - телепорт по `y`.
 - `LocalPlayer.setPositionZ(double z);` - телепорт по `z`.
 - `LocalPlayer.setPositionRelative(double x, double y, double z);` - телепорт по координатам `x` `y` `z` относительно текущих.
-- `LocalPlayer.setPositionRelativeX(double x);` - телепорт по `x` относительно текущего.
-- `LocalPlayer.setPositionRelativeY(double y);` - телепорт по `y` относительно текущего.
-- `LocalPlayer.setPositionRelativeZ(double z);` - телепорт по `z` относительно текущего.
+- `LocalPlayer.setPositionXRelative(double x);` - телепорт по `x` относительно текущего.
+- `LocalPlayer.setPositionYRelative(double y);` - телепорт по `y` относительно текущего.
+- `LocalPlayer.setPositionZRelative(double z);` - телепорт по `z` относительно текущего.
 
 - `LocalPlayer.setVelocity(double x, double y, double z);` - задает ускорение по `x` `y` `z`.
 - `LocalPlayer.setVelocityX(double x);` - задает ускорение по `x`
