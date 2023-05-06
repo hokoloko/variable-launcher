@@ -1,7 +1,7 @@
 <html>
     <head>
         <version code="-1" name="1.0.1"/>
-        
+
         <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
         <meta name="viewport" content="width=device-width"/>
 
@@ -14,12 +14,74 @@
             body {
                 background-color: #141414;
             }
+
+            code {
+                background: #323232;
+                border-radius: 5px;
+                padding: 1px;
+            }
+
+            h3 {
+                margin: 0px;
+            }
+
+            a {
+                color: blue;
+            }
         </style>
     </head>
 
     <body>
-        <h1>
-            пон
-        </h1>
+        <h3>Это обновление по большей части было нацелено на исправление багов, я все еще не уверен, что у некоторых людей пропадут краши. Обновления будут продолжаться, и новые функции тоже будут, всему свое время.</h3>
+        <p><b>Изменения в модулях</b></p>
+        <ol>
+            <li>добавлен новый модуль <code>ChestESP</code> в раздел <code>Misc</code>.</li>
+            <li>добавлен новый модуль <code>CustomDPI</code> в раздел <code>Other</code>.</li>
+            <li>добавлен новый модуль <code>AutoGapple</code> в раздел <code>Combat</code>.</li>
+            <li>добавлен новый модуль <code>FreeCam</code> в раздел <code>Misc</code>.</li>
+            <li>добавлена настройка <code>Mode</code> в модуль <code>TargetSpin</code>.</li>
+            <li>добавлена настройка <code>Auto close</code> в модуль <code>ChestStealer</code>.</li>
+            <li>исправлен <code>ChatMacros</code> - не отображал макросы загруженные конфигом.</li>
+            <li>исправлена настройка <code>Tap destroy</code> у модуля <code>FastBreak</code> - не выключалась.</li>
+            <li>исправлена настройка <code>Amplifier</code> у модуля <code>FastBreak</code> - уровень не менялся.</li>
+            <li>настройка <code>Velocity</code> у модуля <code>Flight</code> переименована на <code>Speed</code>.</li>
+            <li>удалена настройка <code>Print logs</code> у модуля <code>AntiBot</code> - не нужно.</li>
+            <li>теперь при переключении бинда у него изменяется цвет текста.</li>
+            <li>увеличена обводка кнопки бинда.</li>
+            <li>добавлена кнопка <code>Skip</code> в окно проверки обновлений перед запуском игры. Нажатие кнопки <code>Назад</code> на панели навигации так же пропустит проверку.</li>
+            <li>добавлена настройка <code>Mode</code> в модуль <code>AutoSprint</code> - отвечает за условие при котором включается спринт.</li>
+            <li>исправлена совместная работа <code>Flight</code> с <code>Step</code> - <code>Step</code> работал криво (очень).</li>
+            <li>исправлена работа модуля <code>KillAura</code> - в душе не ебу что с ней было, но да, говорят что теперь работает лучше.</li>
+            <li>исправлен режим <code>Target</code> у модуля <code>KillAura</code> - нельзя было настроить дистанцию.</li>
+            <li>исправлен модуль <code>AutoSword</code> - криво работал.
+            <li>удалена настройка <code>Sword slot</code> у модуля <code>AutoSword</code> - гавно какоето.
+            <li>добавлена настройка <code>Auto swap</code> в модуль <code>AutoSword</code> - ищет лучший по качеству меч в инвентаре и перемещает его на первый слот.
+            <li>добавлена настройка <code>Swap delay</code> в модуль <code>AutoSword</code> - задержка между поиском меча.
+            <li>добавлена настройка <code>Auto select</code> в модуль <code>AutoSword</code> - автоматически берет меч в руку.
+            <li>добавлена настройка <code>Selection mode</code> в модуль <code>AutoSword</code> - отвечает за условие при котором меч берется в руку.
+            <li>добавлена настройка <code>Distance</code> в модуль <code>AutoSword</code> - появляется если включен режим <code>Distance</code> в настройке <code>Selection mode</code>. Нужна для настройки минимальной дистанции рядом с игроком чтобы брать меч.
+            <li>исправлен совместная работа <code>Flight</code> с <code>BedFucker</code> - <code>BedFucker</code> ломал кровати только визуально если был включен одновременно с <code>Flight</code> с режимом <code>No packets</code>.</li>
+            <li>настройка <code>Through walls</code> у модуля <code>Chams</code> переименована в <code>Render through walls</code></li>
+            <li>исправлен <code>AutoArmor</code> - криво работал.</li>
+            <li>добавлена настройка <code>Auto swap</code> в модуль <code>Scaffold</code>.</li>
+            <li>добавлена настройка <code>Swap delay</code> в модуль <code>Scaffold</code>.</li>
+            <li>режим <code>Horizontal</code> у модуля <code>Flight</code> переименован на <code>Velocity</code>.</li>
+            <li>добавлен режим <code>Teleport</code> для модуля <code>Flight</code>.</li>
+            <li>режим <code>No packets</code> у модуля <code>Flight</code> переделан под настройку типа <code>state</code>.</li>
+        </ol>
+
+        <p><b>Изменения в API</b></p>
+        <ol>
+            <li>исправлен баг связанный с тем, что бинды кастомных модулей не вызызвали <code>onToggleListener</code> и <code>onClickListener</code>.</li>
+            <li>исправлен метод <code>ModuleManager.addModules</code> - не добавлял модули.</li>
+            <li>добавлен метод <code>LocalPlayer.setMoveButtonStatus(int id, boolean status);</code></li>
+            <li>метод <code>LocalPlayer.setPositionXRelative</code> переименован в <code>LocalPlayer.setPositionRelativeX</code>.</li>
+            <li>метод <code>LocalPlayer.setPositionYRelative</code> переименован в <code>LocalPlayer.setPositionRelativeY</code>.</li>
+            <li>метод <code>LocalPlayer.setPositionZRelative</code> переименован в <code>LocalPlayer.setPositionRelativeZ</code>.</li>
+            <li>добавлен константный класс <code>MoveButton</code> - нужен для методов <code>LocalPlayer.isMoveButtonPressed</code> и <code>LocalPlayer.setMoveButtonStatus</code>.</li>
+            <li>изменен метод <code>Inventory.setArmor</code>. Теперь он требует 3 аргумента: <code>slot</code> - слот с броней, <code>armorSlot</code> - слот брони (от 0 до 3), <code>freeSlot</code> - пустой слот на случай если уже надета броня.</li>
+        </ol>
+
+        <p><a href="https://t.me/VariableLauncher">Telegram</a></p>
     </body>
 </html>
