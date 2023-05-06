@@ -23,6 +23,7 @@
 - [Константые классы](#константные-классы)
   - [ModuleCategory](#modulecategory)
   - [BlockSide](#blockside)
+  - [MoveButton](#movebutton)
   - [PacketType](#packettype)
 - [Hooks](#hooks)
 
@@ -234,6 +235,7 @@
 - `LocalPlayer.closeScreen();` - закрывает ЛЮБОЕ окно (можно даже "закрыть" рендер игры, так что осторожнее).
 - `LocalPlayer.sendChatMessage(String text);` - отправляет в чат сообщение от твоего лица.
 - `LocalPlayer.isMoveButtonPressed(int id);` - возвращает `true` если кнопка с таким-то `id` зажата и `false` если нет.
+- `LocalPlayer.setMoveButtonStatus(int id, boolean status);` - выдает кнопке управления `id` статус `status`. (кароче чтобы зажимать кнопку)
 - `LocalPlayer.setStepHeight(double height);` - устанавливает высоту шага. (по дефолту 0.5625).
 - `LocalPlayer.setOnGround(boolean onGround);` - устанавливает состояние для переменной `onGround`, проще говоря, игра будет думать что вы на земле, даже если это не так.
 - `LocalPlayer.setSprinting(boolean sprinting);` - включает или выключает спринт на 1 тик в зависимости от `sprinting`.
@@ -247,9 +249,9 @@
 - `LocalPlayer.setPositionY(double y);` - телепорт по `y`.
 - `LocalPlayer.setPositionZ(double z);` - телепорт по `z`.
 - `LocalPlayer.setPositionRelative(double x, double y, double z);` - телепорт по координатам `x` `y` `z` относительно текущих.
-- `LocalPlayer.setPositionXRelative(double x);` - телепорт по `x` относительно текущего.
-- `LocalPlayer.setPositionYRelative(double y);` - телепорт по `y` относительно текущего.
-- `LocalPlayer.setPositionZRelative(double z);` - телепорт по `z` относительно текущего.
+- `LocalPlayer.setPositionRelativeX(double x);` - телепорт по `x` относительно текущего.
+- `LocalPlayer.setPositionRelativeY(double y);` - телепорт по `y` относительно текущего.
+- `LocalPlayer.setPositionRelativeZ(double z);` - телепорт по `z` относительно текущего.
 
 - `LocalPlayer.setVelocity(double x, double y, double z);` - задает ускорение по `x` `y` `z`.
 - `LocalPlayer.setVelocityX(double x);` - задает ускорение по `x`
@@ -348,7 +350,7 @@
 - `Inventory.getOffhandSlot();` - возвращает айди предмета в левой руке.
 - `Inventory.getArmor(int armorSlot);` - возвращает айди предмета в слоте брони `armorSlot` (от 0 до 3).
 - `Inventory.setSelectedSlot(int slot);` - выбирает слот `slot` из хотбара (от 0 до 8).
-- `Inventory.setArmor(int slot, int armorSlot);` - надевает предмет из слота `slot` в слот брони `armorSlot`.
+- `Inventory.setArmor(int slot, int armorSlot, int freeSlot);` - надевает предмет из слота `slot` в слот брони `armorSlot`, и перетаскивает броню (если она есть) из слота `armorSlot` в слот `freeSlot`.
 
 **Примеры: скоро.**
 
@@ -431,6 +433,20 @@ BlockSide.NORTH
 BlockSide.SOUTH
 BlockSide.WEST
 BlockSide.EAST
+```
+
+### MoveButton
+*Нужно для методов `LocalPlayer.isMoveButtonPressed` и `LocalPlayer.setMoveButtonStatus`*
+```
+MoveButton.JUMP
+MoveButton.SHIFT
+MoveButton.JUMP_IN_FLIGHT
+MoveButton.FORWARD
+MoveButton.BACK
+MoveButton.LEFT
+MoveButton.RIGHT
+MoveButton.LEFT_TOP
+MoveButton.RIGHT_TOP
 ```
 
 ### PacketType
