@@ -266,7 +266,7 @@
 - `LocalPlayer.getNearestPlayer(double radius);` - возвращает айди ближайшего игрока в радиусе `radius`.
 - `LocalPlayer.lookAt(int playerID);` - резко поворачивает голову в сторону игрока `playerID`
 - `LocalPlayer.smoothLookAt(int playerID, double smoothness);` - плавно поворачивает голову в сторону игрока с айди `playerID` с плавностью `smoothness` (чтобы работало нужно использовать либо в `onFastTick` либо в `onLevelTick`).
-
+ 
 - `LocalPlayer.getNameTag();` - возвращает строку с никнеймом.
 - `LocalPlayer.getHealth();` - возвращает текущее здоровье.
 - `LocalPlayer.getYaw();` - возвращает поворот головы по горизонтали в градусах.
