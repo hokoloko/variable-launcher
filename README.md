@@ -61,7 +61,7 @@
 - `Module.isActive();` - возвращает текущее состояние модуля (true/false). (*всегда возвращает `false` если модуль нельзя переключать*)
 - `Module.isBindActive();` - возвращает `true` или `false` в зависимости от того, стоит ли бинд на модуле. (*всегда возвращает `false` если модуль нельзя биндить*)
 - `Module.hasSettings();` - возвращает `true` если модуль имеет настройки, и `false` если нет.
-- `Module.getSetting(String name);` - ищет среди настроек модуля настройку с названием `name` и возвращает объект `Setting`. Бросает `RuntimeException` если не находит настройку.
+- `Module.getSetting(String name);` - ищет среди настроек модуля настройку с названием `name` и возвращает объект `Setting` (объект будет являться экземпляром `ButtonSetting`, `ModeSetting`, `SliderSetting`, `StateSetting` или `TextFieldSetting` в зависимости от типа). Бросает `RuntimeException` если не находит настройку.
 - `Module.getSettings();` - возвращает массив объектов `Setting`.
 - `Module.addSetting(Setting setting);` - добавляет настройку к модулю.
 - `Module.addSettings(Setting[] settings);` - тоже самое что и `Module.addSetting(Setting setting);`, просто позволяет одной строкой добавить сразу несколько настроек.
