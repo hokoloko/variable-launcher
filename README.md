@@ -415,7 +415,7 @@
 ## Константные классы
 ### ModuleCategory
 *Категории для кастомных модулей*
-```
+```js
 ModuleCategory.COMBAT
 ModuleCategory.MOVEMENT
 ModuleCategory.PLAYER
@@ -425,7 +425,7 @@ ModuleCategory.OTHER
 
 ### BlockSide
 *В основном нужно для LocalPlayer.buildBlock(x, y, z, side) в качестве аргумента side*
-```
+```js
 BlockSide.DOWN
 BlockSide.UP
 BlockSide.NORTH
@@ -436,7 +436,7 @@ BlockSide.EAST
 
 ### MoveButton
 *Нужно для методов `LocalPlayer.isMoveButtonPressed` и `LocalPlayer.setMoveButtonStatus`*
-```
+```js
 MoveButton.JUMP
 MoveButton.SHIFT
 MoveButton.JUMP_IN_FLIGHT
@@ -450,7 +450,7 @@ MoveButton.RIGHT_TOP
 
 ### PacketType
 *Тип отправляемого пакета, нужно для onSendPacket (ЭТО ТОЖЕ ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)*
-```
+```js
 PacketType.ADD_BEHAVIOR_TREE_PACKET
 PacketType.ADD_ENTITY_PACKET
 PacketType.ADD_ITEM_ENTITY_PACKET
