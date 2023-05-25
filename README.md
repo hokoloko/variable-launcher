@@ -48,8 +48,6 @@
 - `Data.remove(String key);` - удаляет значение с ключом `key`
 - `Data.clear();` - удаляет все значения скрипта.
 
-**Примеры: скоро.**
-
 ## Module
 *Класс для создания кастомных модулей (функции)*<br/>
 **Конструктор: `Module(String name, boolean toggleable, boolean bindable, String category)`**<br/>
