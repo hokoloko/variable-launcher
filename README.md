@@ -5,7 +5,7 @@
 
 - [Глобальные функции](#глобальные-функции)
 - [Data](#data)
-- [Module](#module)
+- [Module](https://github.com/virus-002/variable-launcher/blob/main/changes.html)
 - [ModuleManager](#modulemanager)
 - [Setting](#setting)
 - [ButtonSetting](#buttonsetting)
