@@ -33,6 +33,10 @@
 - `print(String text);` - выводит контекстное сообщение.
 - `preventDefault();` - в зависимости от места вызова, отменяет вызов [хука](#hooks).
 - `getScreenName();` - возвращает название игрового экрана.
+- `getFriends();` - возвращает массив String[] с никами друзей из `FriendManager`.
+- `isFriend(String name);` - возвращает `true` если игрок с ником `name` находится в `FriendManager` и `false` если нет.
+- `addFriend(String name);` - добавляет игрока с ником `name` в `FriendManager`.
+- `removeFriend(String name);` - удаляет игрока с ником `name` из `FriendManager`.
 
 ## Data
 *Класс для сохранения любых данных скрипта в корневой папке приложения*<br/>
@@ -47,7 +51,6 @@
 - `Data.saveBoolean(String key, boolean value);` - сохраняет логическое значение (true/false) с ключом `key` и значением `value`.
 
 - `Data.remove(String key);` - удаляет значение с ключом `key`
-- `Data.clear();` - удаляет все значения скрипта.
 
 ## Module
 *Класс для создания кастомных модулей (функции)*<br/>
@@ -79,8 +82,6 @@
 - `Module.isBindActive(String moduleName);`
 - `Module.hasSettings(String moduleName);`
 - `Module.getSettingNames(String moduleName);`
-- `Module.addSetting(String moduleName, Setting setting);`
-- `Module.addSettings(String moduleName, Setting[] settings);`
 
 **Примеры: скоро.**
 
@@ -91,6 +92,7 @@
 - `ModuleManager.addModule(Module module);` - добавляет модуль в одну из пяти [категорий](#modulecategory) меню.
 - `ModuleManager.addModules(Modules[] modules);` - тоже самое, просто позволяет добавить сразу несколько модулей одной строкой.
 - `ModuleManager.removeModule(Module module);` - удаляет модуль.
+- `ModuleManager.removeModules(Module[] modules);` - тоже самое, просто позволяет удалить сразу несколько модулей одной строкой.
 - `ModuleManager.getModuleNames();` - возвращает массив с именами всех модулей (имена кастомных модулей тоже).
 
 **Примеры: скоро.**
@@ -260,6 +262,7 @@
 - `LocalPlayer.isInGame();` - возвращает `true` если ты находишься в мире или на сервере и наоборот.
 - `LocalPlayer.getViewPerspective();` - возвращает число в зависимости от выбранного вида.
 - `LocalPlayer.setViewPerspective(int view);` - устанавливает вид (типа F5)
+- `LocalPlayer.isMovingForward();` - вернет `true` если игрок двигается вперед и `false` если нет.
 - `LocalPlayer.getDistanceTo(int playerID);` - возвращает дистанцию до игрока с айди `playerID` в блоках.
 - `LocalPlayer.getDistanceToCoords(double x, double y, double z);` - возвращает дистанцию до координат `x` `y` `z` в блоках.
 - `LocalPlayer.getNearestPlayer(double radius);` - возвращает айди ближайшего игрока в радиусе `radius`.
@@ -383,7 +386,8 @@
 *Класс для работы с памятью (ТОЛЬКО ДЛЯ ОСОБО УМНЫХ)*<br/>
 **Статические методы**
 
-- `Memory.patch(int address, int[] patch);` - редактирует участок памяти по адресу `address` на `patch`.
+- `Memory.write(int address, int[] patch);` - редактирует участок памяти по адресу `address` на `patch`.
+- `Memory.read(int address, int length);` - читает и возвращает строку байтов с адреса `address` в количестве `length`.
 - `Memory.getLibrary();` - возвращает адрес либы майна.
 - `Memory.getSymbol(String symbol);` - возвращает адрес символа `symbol` относительно либы.
 - `Memory.getPlayer(int playerID);` - возвращает адрес игрока с айди `playerID` внутри игры.
