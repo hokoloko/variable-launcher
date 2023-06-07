@@ -33,7 +33,7 @@
 - `print(String text);` - выводит контекстное сообщение.
 - `preventDefault();` - в зависимости от места вызова, отменяет вызов [хука](#hooks).
 - `getScreenName();` - возвращает название игрового экрана.
-- `getFriends();` - возвращает массив String[] с никами друзей из `FriendManager`.
+- `getFriends();` - возвращает массив `String[]` с никами друзей из `FriendManager`.
 - `isFriend(String name);` - возвращает `true` если игрок с ником `name` находится в `FriendManager` и `false` если нет.
 - `addFriend(String name);` - добавляет игрока с ником `name` в `FriendManager`.
 - `removeFriend(String name);` - удаляет игрока с ником `name` из `FriendManager`.
