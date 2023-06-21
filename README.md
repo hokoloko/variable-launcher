@@ -309,7 +309,6 @@
 - `Player.isLocalPlayer(int playerID);` - возвращает `true` если игрок является локальным игроком (тобой).
 - `Player.getNameTag(int playerID);` - возвращает никнейм игрока.
 - `Player.setNameTag(int playerID, String nameTag);` - визуально меняет ник игроку с айди `playerID` на `nameTag`.
-- `Player.getHealth(int playerID);` - возвращает текущее количество здоровья игрока.
 - `Player.getYaw(int playerID);` - возвращает поворот головы по горизонтали в градусах.
 - `Player.getPitch(int playerID);` - возвращает поворот головы по вертикали в градусах.
 - `Player.getPositionX(int playerID);` - возвращает позицию по `x`.
@@ -366,6 +365,7 @@
 - `Item.getID(int slot);` - возващает айди предмета из слота `slot`.
 - `Item.getData(int slot);` - возвращает вторичный айди предмета из слота `slot`. (Например, если предмет в слоте `slot` - диорит, то вернет 3).
 - `Item.getName(int slot);` - возвращает имя предмета из слота `slot`.
+- `Item.enchant(int slot, int enchantment, int level);` - зачаровывает предмет из слота `slot` на `enchantment` с уровнем `level`.
 - `Item.getUseDuration(int slot);` - возвращает длительность использования предмета из слота `slot`.
 - `Item.getMaxStackSize(int slot);` - возвращает максимальный размер стака предмета из слота `slot`.
 - `Item.getMaxDamage(int slot);` - возвращает максимальную прочность предмета из слота `slot`.
