@@ -20,7 +20,7 @@
 Добавлен хук "onReceiveServerMessage(String message);".
 Добавлен метод "LocalPlayer.setNameTag(String nameTag);".
 Добавлен метод "Player.setNameTag(int uniqueID, String nameTag);".
-Добавлен метод "Item.enchant(int enchantment, int level);".
+Добавлен метод "Item.enchant(int slot, int enchantment, int level);".
 Добавлен константный класс "Enchantment".
 Исправлен метод "Level.getAddress();".
 Исправлен метод "Level.getPort();".
