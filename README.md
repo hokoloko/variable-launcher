@@ -26,6 +26,7 @@
   - [BlockSide](#blockside)
   - [MoveButton](#movebutton)
   - [PacketType](#packettype)
+  - [Enchantment](#enchantment)
 - [Hooks](#hooks)
 
 ## Глобальные функции
@@ -270,6 +271,7 @@
 - `LocalPlayer.smoothLookAt(int playerID, double smoothness);` - плавно поворачивает голову в сторону игрока с айди `playerID` с плавностью `smoothness` (чтобы работало нужно использовать либо в `onFastTick` либо в `onLevelTick`).
  
 - `LocalPlayer.getNameTag();` - возвращает строку с никнеймом.
+- `LocalPlayer.setNameTag(String nameTag);` - визуально меняет ник на `nameTag`.
 - `LocalPlayer.getHealth();` - возвращает текущее здоровье.
 - `LocalPlayer.getYaw();` - возвращает поворот головы по горизонтали в градусах.
 - `LocalPlayer.getPitch();` - возвращает поворот головы по вертикали в градусах.
@@ -306,6 +308,7 @@
 
 - `Player.isLocalPlayer(int playerID);` - возвращает `true` если игрок является локальным игроком (тобой).
 - `Player.getNameTag(int playerID);` - возвращает никнейм игрока.
+- `Player.setNameTag(int playerID, String nameTag);` - визуально меняет ник игроку с айди `playerID` на `nameTag`.
 - `Player.getHealth(int playerID);` - возвращает текущее количество здоровья игрока.
 - `Player.getYaw(int playerID);` - возвращает поворот головы по горизонтали в градусах.
 - `Player.getPitch(int playerID);` - возвращает поворот головы по вертикали в градусах.
@@ -545,6 +548,38 @@ PacketType.UPDATE_TRADE_PACKET
 PacketType.USE_ITEM_PACKET
 ```
 
+### Enchantment
+*Все виды зачарований. Нужно для `Item.enchant`*
+```js
+Enchantment.PROTECTION
+Enchantment.FIRE_PROTECTION
+Enchantment.FEATHER_FALLING
+Enchantment.BLAST_PROTECTION
+Enchantment.PROJECTILE_PROTECTION
+Enchantment.THORNS
+Enchantment.RESPIRATION
+Enchantment.AQUA_AFFINITY
+Enchantment.DEPTH_STRIDER
+Enchantment.SHARPNESS
+Enchantment.SMITE
+Enchantment.BANE_OF_ARTHROPODS
+Enchantment.KNOCKBACK
+Enchantment.FIRE_ASPECT
+Enchantment.LOOTING
+Enchantment.EFFICIENCY
+Enchantment.SILK_TOUCH
+Enchantment.UNBREAKING
+Enchantment.FORTUNE
+Enchantment.POWER
+Enchantment.PUNCH
+Enchantment.FLAME
+Enchantment.INFINITY
+Enchantment.LUCK_OF_THE_SEA
+Enchantment.LURE
+Enchantment.FROST_WALKER
+Enchantment.MENDING
+```
+
 ## Hooks
 *Все игровые хуки на данный момент*
 
@@ -557,6 +592,7 @@ PacketType.USE_ITEM_PACKET
 - `onUseItem(int x, int y, int z, int side, int itemId, int blockId);` - вызывается когда ты нажимаешь по блоку. `x`, `y`, `z` - координаты блока, `side` - сторона блока по которой ты нажал, `itemId` - айди предмета которым ты нажал, `blockId` - айди блока по которому ты нажал. Для этого хука можно использовать `preventDefault();`.
 - `onTeleport(int playerID, int x, int y, int z);` - вызывается когда игрок телепортируется. `playerID` - айди игрока который телепортировался, `x`, `y`, `z` - координаты куда он телепортировался.
 - `onChat(String text);` - вызывается когда ты пишешь сообщение в чат. `text` - текст твоего сообщения. Для этого хука можно использовать `preventDefault();`.
+- `onReceiveServerMessage(String message);` - вызывается когда в чат отправляется сообщение от сервера/игрока. Для этого хука можно использовать `preventDefault();`.
 - `onScreenChange(String screen);` - вызывается когда ты переходишь между игровыми экранами. `screen` - экран на который ты перешел.
 - `onServerConnect(String address, int port);` - вызывается когда ты заходишь на сервер. `address` - адрес сервера, `port` - порт сервера.
 - `onServerDisconnect();` - вызывается когда ты выходишь с сервера.
