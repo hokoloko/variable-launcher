@@ -1,6 +1,6 @@
 <html>
     <head>
-        <version code="4" name="1.2.0"/>
+        <version code="5" name="1.2.1"/>
 
         <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
         <meta name="viewport" content="width=device-width"/>
@@ -35,34 +35,16 @@
         <p><b>Изменение в модулях</b></p>
 
         <ul>
-            <li>Добавлен модуль <code>PlayerESP</code> в раздел <code>Misc</code>.</li>
-            <li>Добавлен модуль <code>PingMeter</code> в раздел <code>Misc</code>.</li>
-            <li>Добавлен модуль <code>NameProtect</code> в раздел <code>Misc</code>.</li>
-            <li>Добавлен модуль <code>BlockSelection</code> в раздел <code>Misc</code>.</li>
-            <li>Обновлен модуль <code>Chams</code>.</li>
-            <li>Обновлен модуль <code>Coordinates</code>.</li>
-            <li>Обновлен модуль <code>FastUnban</code>.</li>
-            <li>Обновлен модуль <code>EditionFaker</code>.</li>
-            <li>Исправлен и обновлен модуль <code>NameTags</code>.</li>
-            <li>Исправлен модуль <code>Scaffold</code>.</li>
-            <li>Исправлен модуль <code>Configs</code> - теперь можно загружать конфиги из любого места, кроме экрана загрузки мира/сервера (не гарантирую что не крашнет).</li>
-            <li>Исправлен баг с перевернутым экраном (вроде).</li>
-            <li>Исправлен баг с обводкой биндов в активном состоянии.</li>
-            <li>Попытался исправить краши (ничего не обещаю).</li>
+            <li>Обновлен модуль <code>TapTp</code>.</li>
         </ul>
 
         <p><b>Изменение в API</b></p>
 
         <ul>
-            <li>Добавлен хук <code>onReceiveServerMessage(String message);</code>.</li>
-            <li>Добавлен метод <code>LocalPlayer.setNameTag(String nameTag);</code>.</li>
-            <li>Добавлен метод <code>Player.setNameTag(int uniqueID, String nameTag);</code>.</li>
-            <li>Добавлен метод <code>Item.enchant(int slot, int enchantment, int level);</code>.</li>
-            <li>Добавлен константный класс <code>Enchantment</code>.</li>
-            <li>Исправлен метод <code>Level.getAddress();</code>.</li>
-            <li>Исправлен метод <code>Level.getPort();</code>.</li>
+            <li>Добавлен метод <code>Item.setName(int slot, String name);</code>.</li>
+            <li>Исправлен метод <code>LocalPlayer.getPointedVector();</code>.</li>
         </ul>
-        
+
         <p><a href="https://t.me/VariableLauncher">Telegram</a></p>
     </body>
 </html>
