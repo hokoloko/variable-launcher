@@ -380,6 +380,7 @@
 - `Item.isDamaged(int slot);` - возвращает `true` если предмет из слота `slot` имеет не полную прочность.
 - `Item.isPotion(int slot);` - возвращает `true` если предмет из слота `slot` является зельем.
 - `Item.isEnchanted(int slot);` - возвращает `true` если предмет из слота `slot` зачарован.
+- `Item.setName(int slot, String name);` - изменяет имя предмета из слота `slot` на `name`.
 - `Item.setUseDuration(int slot, int duration);` - устанавливает предмету из слота `slot` длительность использования `duration`.
 - `Item.setCount(int slot, int count);` - устанавливает количество предметов из слота `slot` на `count`.
 
