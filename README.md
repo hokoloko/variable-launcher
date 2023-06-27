@@ -27,6 +27,7 @@
   - [MoveButton](#movebutton)
   - [PacketType](#packettype)
   - [Enchantment](#enchantment)
+  - [ParticleType](#particletype)
 - [Hooks](#hooks)
 
 ## Глобальные функции
