@@ -195,7 +195,7 @@
 - `Level.getAllPlayers();` - возвращает массив с айдишниками всех игроков с сервера.
 - `Level.getTime();` - возвращает время суток в игре.
 - `Level.getGameSpeed();` - возвращает текущую скорость игры.
-
+- `Level.addParticle(int type, double x, double y, double z, double velX, double velY, double velZ, int size);` - добавляет партикл типа `type` на координатах `x` `y` `z` с ускорением `velX` `velY` `velZ` и размером `size`.
 - `Level.setTime(int time);` - устанавливает время суток в игре.
 - `Level.setGameSpeed(double speed);` - устанавливает скорость игры. (по умолчанию 20)
 
@@ -579,6 +579,37 @@ Enchantment.LUCK_OF_THE_SEA
 Enchantment.LURE
 Enchantment.FROST_WALKER
 Enchantment.MENDING
+```
+
+### ParticleType
+*Все (почти) виды партиклов. Нужно для `Level.addParticle`*
+```js
+ParticleType.BUBBLE
+ParticleType.CRITICAL
+ParticleType.EXPLODE
+ParticleType.EVAPORATION
+ParticleType.FLAME
+ParticleType.LAVA
+ParticleType.RED_DUST
+ParticleType.SNOW_BALL_POOF
+ParticleType.LARGE_EXPLODE
+ParticleType.ULTRA_LARGE_EXPLODE
+ParticleType.MOB_FLAME
+ParticleType.HEART
+ParticleType.TERRAIN
+ParticleType.TOWN_AURA
+ParticleType.PORTAL
+ParticleType.WATER_SPLASH
+ParticleType.WATER_WAKE
+ParticleType.DRIP_WATER
+ParticleType.DRIP_LAVA
+ParticleType.FALLING_DUST
+ParticleType.SLIME
+ParticleType.RAIN_SPLASH
+ParticleType.VILLAGE_ANGRY
+ParticleType.VILLAGE_HAPPY
+ParticleType.ENCHANTING_TABLE
+ParticleType.NOTE
 ```
 
 ## Hooks
