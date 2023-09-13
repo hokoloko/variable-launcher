@@ -355,6 +355,7 @@
 - `Inventory.getOffhandSlot();` - возвращает айди предмета в левой руке.
 - `Inventory.getArmor(int armorSlot);` - возвращает айди предмета в слоте брони `armorSlot` (от 0 до 3).
 - `Inventory.setSelectedSlot(int slot);` - выбирает слот `slot` из хотбара (от 0 до 8).
+- `Inventory.setOffhandSlot(int slot);` - перемещает предмет из слота `slot` в левую руку.
 - `Inventory.setArmor(int slot, int armorSlot, int freeSlot);` - надевает предмет из слота `slot` в слот брони `armorSlot`, и перетаскивает броню (если она есть) из слота `armorSlot` в слот `freeSlot`.
 
 **Примеры: скоро.**
